@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Diversificación Y Estándares - /sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="Como usuario de linux que soy, y venido anteriormente de un mundo Windows, me encuentro con una serie de incomodidades que, aunque fáciles de &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2005/06/23/diversificacion-y-estandares/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, pequeños programadores y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Jun</abbr> 23
+          <sup></sup> <abbr>05</abbr>
+          <sub>13:07</sub>
+        </div>
+
+      Diversificación Y Estándares</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Como usuario de <a href="http://es.wikipedia.org/wiki/Linux">linux</a> que soy, y venido anteriormente de un mundo <a href="http://www.frikipedia.es/friki/Windows">Windows</a>, me encuentro con una serie de incomodidades que, aunque fáciles de resolver (para mí), creo que deberían dejar de existir. Y no me refiero al tema de las licencias (como los mp3, por ejemplo), que también lo podría mencionar, sino al exceso de diversificación de las distribuciones linux. Tenemos Red Hat (empresa/servidor) y su pequeña Fedora (workstation/casa), Mandriva, Novell-SuSE, Debian/Ubuntu/Knoppix &#8230; ¡Buf! ¿Y qué hace el usuario? ¿Cómo se le puede convencer a un usuario acerca de la distribución más adecuada a sus necesidades? ¿Y cómo se le convence de desinstalar todo y volver a instalar cuando estas necesidades han cambiado? Para este tipo de situaciones se generan acuerdos, consensos y, en consecuencia, estándares. Uno de ellos es la LSB (Linux Standard Base).<br/><br/>Pero no es suficiente: la paquetería es distinta, y, cuando no lo es, se recomienda no mezclar paquetes de distintos orígenes (caso por ejemplo de Red Hat/Mandriva/SuSE o Debian/Ubuntu). En el caso de Windows es fácil: está preparado para Windows, sí o sí. Que lo esté para sus distintas versiones es aparte, pero al menos las versiones de Windows tienen un periodo de vida que permite la readaptación paulatina.<br/><br/>Pero, ¿qué pasa cuando un informático recomienda Mandriva &#8220;para empezar&#8221; y luego Red Hat/Fedora &#8220;para cosas más serias&#8221;? Que el usuario vuelve a encontrarse con el infierno de las dependencias, del cambio de nombre entre paquetes, de las versiones de núcleo y no-núcleo, etc. Bien, volviendo al tema de los estándares: tenemos trabajo. Mucho trabajo. Uno no puede estar pensando en qué distribución es la mejor o la más adecuada (la gente suele mirar más lo primero que lo segundo), sino que funcione el ordenador para lo que lo compró, y algo más. Salen nuevas versiones y distribuciones de Linux cada poco, cada TAN poco que resulta confuso.<br/><br/>Para muestra, un botón: le conté a mi churri que iba a sustituir Fedora por Kubuntu en mi ordenador, y me dijo &#8220;ah, pero ¿no te lo habías instalado hace poco?&#8221; Efectivamente, no tenía ni dos semanas instalada Fedora, y, aunque me gustara mucho su acabado, echaba de menos el sistema APT de Debian. Tuve que explicarle que Linux es sólo el núcleo, y que luego está la serie de programas que funcionan bajo ese núcleo, que debido al enfoque de cada empresa para el sector al que quisiera destinar el producto, se realizan recopilaciones o &#8220;distros&#8221; que cumplen (o intentan) los objetivos de dicho enfoque.<br/><br/>&#8220;¿Y no puede haber un Linux Home, un Pro y un Server?&#8221; Una pregunta tan sencilla que tapa la boca. Naturalmente que hay distros que cumplen ese cometido, pero se reparten tanto-tantísimo el mercado actual, que la confusión crece por el temor de no haber elegido la correcta.<br/><br/>Rezo por el día en que se dejen de hacer tantas distros como formas de pensar, que se aúnen esfuerzos y que luego sí, se hagan las personalizaciones/enfoques que se quieran, gracias al uso de software libre. Pero por el amor de <a href="http://www.frikipedia.es/friki/Dios" target="_blank">Dios</a>, unamos esfuerzos y ahorremos energías, que si queremos un escritorio de calidad que compita con los comerciales, lo que estamos haciendo es el primo.<br/><br/>Ea, uníos a Kubuntu :P</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">David PG</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2005-06-23T13:07:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2005</span></span> <span class='time'>1:07 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2005/06/23/diversificacion-y-estandares/" data-via="david_3pwood" data-counturl="http://devopsysadmin.github.io/blog/2005/06/23/diversificacion-y-estandares/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2005/06/14/informatico-ezoque/" title="Previous Post: ¿Informático? ¿ezoqué?">&laquo; ¿Informático? ¿ezoqué?</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2005/07/25/el-five-de-lo-que-linux-deberia-aprender/" title="Next Post: El "top five" de lo que linux debería aprender">El &#8220;top five&#8221; de lo que linux debería aprender &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 &#8220;Lenny&#8221; Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

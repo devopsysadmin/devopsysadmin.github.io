@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>/sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="Puesto que hace mucho que no escribo en este blog (y eso que sabía el compromiso que tengo al separar mi antiguo blog en 2 para no mezclar vida &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/posts/2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, pequeños programadores y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Nov</abbr> 7
+          <sup></sup> <abbr>08</abbr>
+          <sub>20:20</sub>
+        </div>
+
+      <a href="/blog/2008/11/07/objetivos-y-mejoras-de-kde-42/">Objetivos Y Mejoras De KDE 4.2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Puesto que hace mucho que no escribo en este blog (y eso que sabía el compromiso que tengo al separar mi antiguo blog en 2 para no mezclar vida privada y labor informática), me he puesto a mirar la página de techbase de KDE, donde figuran los planes y objetivos con cada versión grande.<br/><br/>Para la versión entrante, la 4.2, que saldrá a finales de Enero, tienen marcados los siguientes objetivos:<br/><ul><br/>	<li>módulos KDevelop y KDevplatform</li><br/>	<li>Marco de desarrollo en Decibel para VoIP y comunicación en tiempo real</li><br/>	<li><a href="http://techbase.kde.org/Projects/Plasma/Package" target="_blank">Paquetes &#8220;Plasmagik&#8221;</a> (de instalar por click) para plasma y un creador de add-ons</li><br/>	<li>Un Kopete más pulido</li><br/>	<li>Agregar <a href="http://kblogger.pwsp.net/" target="_blank">KBlogger</a> a KDE-PIM</li><br/>	<li>Eigen 2 (librería de cálculo aritmético lineal) en kdesupport, usado en edu/office/games</li><br/>	<li>Edición modal (a lo &#8220;VI&#8221;) en Kate/KDevelop</li><br/>	<li>Ark (gestor de archivos comprimidos) muy mejorado</li><br/>	<li>Montones de pequeñas características</li><br/></ul><br/>De las pequeñas características, sacado del <a href="http://techbase.kde.org/Schedules/KDE4/4.2_Feature_Plan" target="_blank">feature plan</a>, destaco las siguientes:<br/><ul><br/>	<li>&#8220;Modo administrador&#8221; en SystemSettings</li><br/>	<li>Un administrador de impresión, sustituto del extinto KDEPrint, llamado system-config-printer-kde</li><br/>	<li>Integración con QtScript</li><br/>	<li>Importar esquemas de colores de KDE3</li><br/>	<li>aprendizaje básico de krunner</li><br/>	<li>arrastre de iconos del panel al escritorio</li><br/>	<li>soporte python en plasma</li><br/>	<li>agrupación de iconos en la barra de tareas</li><br/>	<li>plasmoides en el protector de pantalla</li><br/>	<li>auto-ocultar panel</li><br/>	<li>soporte para Google Gadgets</li><br/>	<li>decoración de sombras de la ventana</li><br/>	<li>ajuste personalizado de la velocidad de los efectos</li><br/>	<li>efectos de cubo y magic lamp, conocidos de compiz</li><br/>	<li>plasmoide de contactos basado en los encontrados en kopete</li><br/>	<li>kget soporta torrents, ahora soportará el protocolo ed2k (edonkey/emule) gracias a mldonkey</li><br/>	<li>applet para gestionar la red</li><br/>	<li>Dragon Player, independiente de xine</li><br/>	<li>anotaciones sonoras y de enlaces en okular</li><br/>	<li>reducción de ojos rojos en Gwenview</li><br/>	<li>backend de okular para faxes</li><br/>	<li>página inicial de konqueror cambiada, mostrando los marcadores del usuario</li><br/>	<li>zoom para imágenes en dolphin</li><br/></ul><br/>Visto lo visto, no son pocas las novedades que nos esperan, algunas con más impaciencia que otras. Todo aquello que no se pueda implementar para la versión 4.2 (aunque la mayoría de lo que os he puesto es trabajo ya terminado o en progreso), saldrá para la 4.3, prevista para el 30 de junio de 2009, y cuyo plan de características aún no ha sido concretado.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Oct</abbr> 31
+          <sup></sup> <abbr>08</abbr>
+          <sub>16:46</sub>
+        </div>
+
+      <a href="/blog/2008/10/31/qt-creator-un-posible-rad-para-qtkde/">QT Creator, ¿un Posible RAD Para QT/KDE?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Los que nos dedicamos a la programación, ya sea como hobby (mi caso) o como parte del trabajo diario, tenemos que agradecer a Trolltech, la creadora de las bibliotecas QT, el nacimiento de esta nueva herramienta: QT Creator.<br/><br/>QT Creator se presenta como un IDE (Integrated Development Enviroment) ligero y multiplataforma diseñado para hacer más simple la tarea de crear aplicaciones basadas en QT4. Dispone de un asistente (wizard), ayuda rápida, autorelleno de sintaxis y compilador integrado en su versión para Windows (en Linux dispondríamos de los paquetes que vienen en nuestra distribución, con lo que no es problema ninguno).<br/><br/>Aquí os pongo un vídeo demostrativo (el mismo que aparece en la página de trolltech):<br/><p style="text-align:center;"><object height="350" width="425"><br/>      <param name="movie" value="http://www.youtube.com/v/U7yje3D1UM4"><br/>      <param name="wmode" value="transparent"><br/>      <embed src="http://www.youtube.com/v/U7yje3D1UM4;rel=0" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"><br/>      </object></p><br/><br/>Yo lo he estado probando y me ha gustado bastante, acostumbrado que estoy a la interfaz de Delphi. Me falta, sin embargo, una gestión un poco mejor de las señales/slots, pero hay que darle tiempo al tiempo, puesto que la versión final saldrá a primeros del año que viene.<br/><br/>Noticia vista en barrapunto: <a href="http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml" target="_blank">http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml<br/></a>Enlace a QT Creator, en la página de Trolltech: <a href="http://trolltech.com/developer/qt-creator" target="_blank">http://trolltech.com/developer/qt-creator</a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Oct</abbr> 22
+          <sup></sup> <abbr>08</abbr>
+          <sub>11:17</sub>
+        </div>
+
+      <a href="/blog/2008/10/22/kde-42-los-mensajes-emergentes/">KDE 4.2 &#8220;Arreglará&#8221; Los Mensajes Emergentes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">KDE 4.2 tiene pensado salir como estable para finales de enero de 2009 (concretamente, el 27, según su <a href="http://techbase.kde.org/Schedules/KDE4/4.2_Release_Schedule" target="_blank">planning</a>), y poco a poco se va viendo lo que nos traerá esta nueva versión.<br/><br/>Uno de los detalles destacables es el &#8220;arreglo&#8221; de los mensajes emergentes. Para explicar un poco mejor, tomemos como ejemplo a kopete, el cliente de mensajería: cuando un usuario entra, el mensaje emergente aparece arriba, a la derecha de la pantalla. Lo mismo si nos abre una conversación y nos da a elegir si queremos abrir una ventana o ignorar el mensaje. Todo arriba a la derecha.<br/><br/>Ahora, el sistema de mensajes emergentes pertenece al plasmoide &#8220;systray&#8221;, de manera que aparece donde tiene que aparecer:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/10/plasma_notifications.png"><img class="aligncenter size-full wp-image-66" title="plasma_notifications" src="http://davidpx.files.wordpress.com/2008/10/plasma_notifications.png" alt="" width="303" height="136" /></a><br/><br/>Pero no sólo se queda en kopete, sino que va almacenando los mensajes emergentes para que vayan saliendo de manera organizada uno encima de otro. Además, se ha &#8220;plasmizado&#8221; para que tenga un aspecto visual más acorde al tema elegido.<br/><br/>Esta nueva mejora del systray no es la única: vuelve la ocultación de iconos y la inclusión de plasmoides dentro de la bandeja.<br/><br/>KDE 4.2 quizá sea lo que debió nacer como KDE 4.0 (por lo menos, para aquéllos que no entienden el lío de &#8220;KDE4 no es KDE 4.0&#8221; y cosas así), pero no podemos negar que está haciéndose un trabajo increíble para darnos una experiencia de escritorio cómoda y funcional.<br/><br/>Vía: <a href="http://aseigo.blogspot.com/2008/10/plasma-is-now-feature-complete.html" target="_blank">http://aseigo.blogspot.com/2008/10/plasma-is-now-feature-complete.html</a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Sep</abbr> 24
+          <sup></sup> <abbr>08</abbr>
+          <sub>22:52</sub>
+        </div>
+
+      <a href="/blog/2008/09/24/virtualbox-20-tambien-es-qt4/">Virtualbox 2.0 También Es QT4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Si no nos bastaba con que la gente del <a href="http://www.videolan.org" target="_blank">VLC</a> nos diera la sorpresa de pasar sus widgets a QT4, resulta que <a href="http://www.virtualbox.org" target="_blank">VirtualBox</a>, el virtualizador de sistemas operativos, también se pasa a estas librerías para mostrarnos su intefaz.<br/><br/>Aunque la configuración de la red más allá de virtualizar un sistema operativo resulta algo engorrosa, este programa hace auténticas virguerías en conseguir una virtualización casi perfecta (hay muchos artículos que explican cómo ejecutar una aplicación windows en un escritorio linux a través de VirtualBox y RDP) y es altamente recomendable para los que les guste probar distribuciones de linux, o experimentar con SSOO limpios o arreglados según la necesidad.<br/><br/>Puesto que la noticia la he leído en KDE-Hispano y a ellos pertenecen las capturas que he visto, os dejo el enlace para que le echeis un ojo: <a title="http://www.kdehispano.es/?q=content/lanzado-virtualbox-20" href="http://www.kdehispano.es/?q=content/lanzado-virtualbox-20" target="_blank">http://www.kdehispano.es/?q=content/lanzado-virtualbox-20</a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Sep</abbr> 22
+          <sup></sup> <abbr>08</abbr>
+          <sub>23:01</sub>
+        </div>
+
+      <a href="/blog/2008/09/22/vlc-092-con-interfaz-qt4/">VLC 0.9.2, Con Interfaz QT4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">A estas alturas no es noticia que el reproductor multimedia <a title="VLC" href="http://www.videolan.org" target="_blank">VLC</a> tiene nueva versión, la 0.9.2, y tampoco lo es que su juego de botones y ventanas ha cambiado del wxWindows a QT4. El objetivo de este artículo, no obstante, es el de integrar una aplicación tan útil en el escritorio KDE.<br/><br/>Para empezar, y a sabiendas de que yo uso Debian <em>Testing </em>(sí, <em>testing</em>, y no <em>lenny</em>. Ahora mismo es la misma distribución, pero la <em>testing</em> es cambiante con el tiempo y <em>lenny</em>, cuando pase a estable, tendrá únicamente corrección de fallos de seguridad), comento que habrá que hacer un uso temporal de los repositorios de Ubuntu, puesto que es en la única distro &#8220;Debian-like&#8221; que he encontrado paquete.<br/><br/>Ahora, no enmarranemos el sources.list quitando y poniendo lineas de otras distribuciones. Crearemos un nuevo list dentro de <em>/etc/apt/sources.list.d</em> (fijaos que la almohadilla significa con permisos de root, ya sea con &#8221;<em>su</em>&#8221; o con &#8221;<em>sudo</em>&#8221;, y que no hay salto de línea):<br/><code># echo "deb http://es.archive.ubuntu.com/ubuntu hardy main contrib universe multiverse" &gt; /etc/apt/sources.list.d/ubuntu.list<br/># echo "deb http://ppa.launchpad.net/c-korn/ubuntu hardy main" &gt;&gt; /etc/apt/sources.list.d/ubuntu.list<br/># apt-get update ; apt-get -y --purge remove vlc-* ; apt-get install -y --force-yes vlc<br/># mv /etc/apt/sources.list.d/ubuntu.list /etc/apt/sources.list.d/ubuntu.list.bak<br/># apt-get update</code><br/>Este método lo aplicaremos hasta que la versión 0.9.2 (o superior) no esté, como mínimo, en <em>unstable</em>.<br/><br/>Vale, ya lo tenemos instalado, dependencias satisfechas, limpito otra vez el sources.list &#8230; Ahora vamos a darle un aspecto &#8220;más KDE&#8221;. Entrad en Herramientas -&gt; Preferencias. Tendreis la primera pantalla, seleccionamos &#8220;todo&#8221; (abajo recuadrado en rojo):<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-002.jpg"><img class="aligncenter size-thumbnail wp-image-52" title="snap-002" src="http://davidpx.files.wordpress.com/2008/09/snap-002.jpg?w=115" alt="" width="115" height="96" /></a><br/><br/>Una vez dentro, en el árbol de la izquierda (esto ya os parecerá más al menú clásico del VLC), seleccionamos Interfaz -&gt; Interfaces principales -&gt; Qt, y desmarcad la opción que os pongo en rojo:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-003.jpg"><img class="aligncenter size-thumbnail wp-image-57" title="snap-003" src="http://davidpx.files.wordpress.com/2008/09/snap-003.jpg?w=115" alt="" width="115" height="96" /></a><br/><br/>Personalmente también le he quitado el icono de la bandeja de entrada, pero eso ya va más al gusto de cada uno.<br/><br/>Y para que veais cómo queda de integrado, sin pieles (skins) ni nada, una captura de mi escritorio:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-001.jpg"><img class="aligncenter size-thumbnail wp-image-56" title="snap-001" src="http://davidpx.files.wordpress.com/2008/09/snap-001.jpg?w=120" alt="" width="120" height="96" /></a></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Sep</abbr> 10
+          <sup></sup> <abbr>08</abbr>
+          <sub>18:48</sub>
+        </div>
+
+      <a href="/blog/2008/09/10/vuelta-debian/">Vuelta a Debian</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Tras todo este tiempo perteneciendo a la saga de seguidores de <a href="http://kubuntu-es.org" target="_blank">kubuntu</a>, vuelvo a mi sitio dentro de la comunidad <a href="http://debian.org" target="_blank">Debian</a>.<br/><br/>¿Por qué? Primero, porque Debian es una excelente solución para servidores y equipos que requieren estabilidad por encima de actualizaciones. Segundo, porque los paquetes &#8220;testing&#8221;, a pesar de su nombre, son bastante sólidos y se actualizan cada poco. Y tercero, porque creo que la hija Ubuntu tiene demasiados avalorios que a mí me resultan algo incómodos. No soy propenso al escritorio espartano (salvo en el ámbito laboral, en el que prefiero consola y herramientas gráficas básicas), y de hecho tengo agregado el repositorio de kde4 para debian Lenny, pero es que hay algo en esta distribución que me convence cada vez más.<br/><br/>En fin, ya os iré contando programas, consejos, trucos y métodos de afinamiento para esta distribución.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>May</abbr> 1
+          <sup></sup> <abbr>08</abbr>
+          <sub>13:28</sub>
+        </div>
+
+      <a href="/blog/2008/05/01/kde-41-ya-tiene-una-alfa/">KDE 4.1 Ya Tiene Una Alfa</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">La gente de KDE ya tiene disponible su primera alfa de lo que será la versión 4.1 de este entorno gráfico. La principal característica que diferencia esta nueva de la anterior 4.0 es su destino: el usuario final (recordemos que la anterior estaba destinada a desarrolladores para que fueran migrando sus aplicaciones a la nueva rama KDE4). Con esta nueva alfa, tenemos también una novedad: multiplataforma. El más purista (y quisquilloso) podría decirme que eso ya era viable gracias a <a href="http://www.cygwin.com/" target="_blank">cygwin</a>, y en cierto modo así es. Sin embargo, cygwin es una capa que instala las aplicaciones que así lo permiten, y KDE 4.1 será completamente nativo. No creo que sea necesario decir que difícilmente se trasladará el escritorio, sino más bien las aplicaciones que sobre él corren. Imaginaos, por ejemplo, la introducción de amaroK en el mundo windows: cuidado <a href="http://www.winamp.es/" target="_blank">Winamp</a>, cuidado <a href="http://www.apple.com/es/itunes/" target="_blank">iTunes</a>. En el campo del correo electrónico, imaginaos un kmail que fuera válido tanto para empresa como para particulares. En el de mensajería (quitando el famoso <a href="http://www.pidgin.im/" target="_blank">pidgin</a>), kopete con su posibilidad de multiprotocolo (MSN, AIM, Yahoo IM, gTalk/Jabber, IRC&#8230;). En fin, el lector menos avispado notará que se me está haciendo la boca agua. No es para menos, ya que también es un camino que allana la migración de los usuarios a sistemas abiertos (FreeBSD, OpenSolaris, Linux). Primero se le acostumbra al nuevo conjunto de aplicaciones, se le explica sus bondades y demuestra su utilidad, y poco a poco, cuando se encuentre cómodo, ¡ZAS! En toda la boc&#8230; esteee&#8230; se le cambia el sistema operativo. Nota para hoygans: chavales, si os aparece una palabra subrayada en rojo ondulado, no significa que el programa la considere importante. Es que está mal escrita. (Ventajas del <a href="http://aspell.net/" target="_blank">aspell</a> en todo lo que huele a KDE).</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Jan</abbr> 3
+          <sup></sup> <abbr>08</abbr>
+          <sub>12:25</sub>
+        </div>
+
+      <a href="/blog/2008/01/03/kde-40-no-es-kde4/">KDE 4.0 No Es KDE4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="content">Hago CopyPaste de <a href="http://www.kdehispano.org/node/8236#comment-12130" target="_blank">un post en kdehispano.org</a> que me ha parecido de lo más acertado en lo que será y lo que no será KDE 4.0:</div><br/><div class="content"><em>Como ya digo más abajo, ya hace un año que se hablaba de que KDE 4.0 no iba a ser KDE4. No es cierto que «les ha pillado el toro [&#8230;] y que ahora se excusan con lo de sacar el producto a plazos [&#8230;] como Akonadi»; hace mucho tiempo que ciertas cosas, como Akonadi, estaban descartadas para KDE 4.0. Aquí mismo en KDEHispano hubo una encuesta que preguntaba qué versión de KDE4 iba a utilizar y una de las respuestas era directamente KDE 4.1, dando por hecho que la versión KDE 4.0 no iba a estar precisamente completa. Pero el asunto no está en discutir si KDE 4.0 está acabado o no, o si lo han sacado deprisa y corriendo o más o menos acorde a sus planes. El asunto es que desde el equipo de KDE (y creo que no sólo desde ahí) se percibe una exagerada expectación ante KDE 4.0, por que el público en general tiende a confundir ambas cosas, y se espera que KDE 4.0 sea la repanocha, cuando lo cierto es que en ciertos ámbitos veremos claramente recortadas las funcionalidades respecto a la última versión de la serie 3.x.</em></div><br/><div class="content"></div><br/><div class="content"><em>¿Qué temen? Que cuando KDE 4.0 salga a la calle sea públicamente ajusticiado por la parte más «inculta» en asuntos de desarrollo de software de la fauna que puebla el bosque digital que es Internet, es decir, periodistas en busca de sangre sensacionalista, blogueros compulsivos sin visión, comentaristas anónimos y no tan anónimos con la misma falta de visión y más ganas aún de carnaza, y otros chascarristas y descerebrados varios. Y tendrán razón en que KDE 4.0 supone un cierto retroceso en ciertas cosas, tan cierto como que supone un gran avance en otras cosas que están ocultas, en las infraestructuras. Por que estos personajes probablemente no pasarán de echar un rápido vistazo a algún LiveCD, ejecutarán un par de plasmoides y poco más. Y eso será terriblemente injusto.</em></div><br/><div class="content"></div><br/><div class="content"><em>Por ejemplo, miedo me dan los comentarios que se puedan hacer al respecto de KDE 4.0 en Meneame por parte de los más descerebrados y toda la posible audiencia que pueda leerlos. ¿Y después? Cuando a finales de año salga KDE 4.1 y ya empiece a ser la mencionada repanocha todo el mundo recordará lo malo que (supuestamente) era antes y habrá que vencer una resistencia artificialmente construida en base a esa errónea percepción de la versión 4.0. Así que este tipo de mensajes trata de recordar que las funcionalidades de KDE4 se irán alcanzando según avance el ciclo de vida del software. Desde luego, si luego resulta KDE 4.0 es un desastre habrá que criticarlo sin miramientos, por que ocultar la verdad no sirve de nada y no es desde luego el estilo del mundo del software libre (ocultismos y otras negras artes las dejamos para otros).</em></div><br/><div class="content"></div><br/><div class="content"><em>En resumen, que hay que tratar de hacer críticas acertadas, con conocimiento de causa. Brevemente: sí, faltarán cosas; sí, estábamos avisados, sí, probablemente pretendían tener más cosas listas; sí, tienen miedo a la reacción de la «crítica rápida superficial» típica de Internet y, por último, creo que se debe simplificar el asunto a «van retrasados y dan excusas».[&#8230;]</em></div><br/><div class="content"></div><br/><div class="content">Y es que la crítica fácil es demasiado&#8230; eso, fácil, como para dejarla escapar. Nos encanta desmerecer el trabajo ajeno sin tener ni zorra idea de lo que se ha trabajado en él. Así que, señores fanboys, aparte de las flechas, vayan preparando escudos. No pienso quedarme de brazos cruzados mientras intentan desmembrar el trabajo DESINTERESADO de un grupo de personas que, con cada versión, acercan el software libre al usuario de a pie por un lado, y simplifican la tarea de desarrollo por otro.</div><br/><div class="content"></div><br/><div class="content">El que avisa no es traidor.</div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Nov</abbr> 30
+          <sup></sup> <abbr>07</abbr>
+          <sub>12:24</sub>
+        </div>
+
+      <a href="/blog/2007/11/30/lo-que-nos-traera-kubuntu-hardy/">Lo Que Nos Traerá Kubuntu Hardy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Me ha dado por leerme los <a href="https://blueprints.launchpad.net/ubuntu/hardy" target="_blank">blueprints para Hardy</a>, que viene a ser la lista de cosas que les gustaría tener implementadas para esta nueva versión de Kubuntu. Como usuario de KDE que soy, voy a centrarme en lo que nos quieren traer y que afecte a nuestro K-Escritorio.<br/><ul><br/>	<li><strong>Autenticación con Dominios Windows</strong>. Esto tal vez no sea útil para los usuarios convencionales (aka Home/Desktop-users), pero sí para entornos de trabajo. Imaginaos la de programas que hay que utilizan autenticación LDAP o de Active Directory. Imaginaos ahora que un usuario de ubuntu tuviera que andar &#8220;enguarrándose&#8221; con usuario y contraseña POR APLICACIÓN. Y peor aún, imaginaos a un usuario cuyo administrador de sistemas (que es su labor) cambia las contraseñas cada X tiempo. ¿Entendéis lo útil que puede llegar a ser?</li><br/>	<li><strong>Continúa la integración con KDE 4</strong>. Aunque hardy no lo traerá por defecto (pensad que es una LTS y quieren estar muy MUY seguros de que todo va a ir como la seda), se van integrando elementos del futuro KDE 4 en Kubuntu. Se usará la estructura de empaquetación de Debian, pero sustituyendo todo aquello que indique kde por kde4, para que coexistan ambos escritorios de manera temporal. Así, en vez de kdebase, por ejemplo, el paquete se llamaría kde4base, se instalará en /usr/lib/kde4, etc.</li><br/>	<li><strong>Hacer lo mismo que hace Ubuntu</strong>. Puede parecer una chorrada, y bastante mal me parece que tengan que planteárselo como propósito en vez de ser algo inherente, pero aquí está. Quieren que Kubuntu tenga las mismas funcionalidades de Ubuntu. ¿Ninguno se ha tomado Kubuntu Gutsy como un Ubuntu Feisty con paquetes actualizados? Se debe a la preferencia (y cantidad de gente) que se da al escritorio con Gnome. Parece que se van a poner las pilas y ofrecer módulos de configuración de compiz en ksystemsettings (el pseudo-sustituto de kcontrol), instalación automática de impresoras (como ya hace Ubuntu Gutsy), instalación automática de códecs en kaffeine, etc. Para mantener coherencia con KDE 4, usarán PyQT4.</li><br/></ul><br/>El resto de características en blueprints (44 a fecha de hoy) tienen una influencia mayor en Gnome o en el futuro GoBuntu, Ubuntu optimizado para su virtualización.</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Oct</abbr> 24
+          <sup></sup> <abbr>07</abbr>
+          <sub>13:24</sub>
+        </div>
+
+      <a href="/blog/2007/10/24/los-drivers-de-ati-listos-para-su-uso/">Los Drivers De ATI Listos Para Su Uso Con Compiz</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="content">Veo en <a href="http://meneame.net/" target="_blank">menéame</a> que ya hay disponible un driver de ATI compatible con Compiz sin necesidad de Xgl (vamos, que por fin los usuarios de ATI pueden hacer las cosas como el resto de los mortales). Enlaza a una página alemana, con instrucciones en inglés: http://forlong.blogage.de/article/2007/10/23/fglrx-8423&#8212;finally-with-AIGLX-support#  Hago aquí la traducción para el que quiera hacerle uso:<br/><ol><br/>	<li>Eliminar Xgl, si está instalado: <code>sudo apt-get remove xserver-xgl</code></li><br/>	<li> Eliminar el antiguo controlador, si está instalado: <code>sudo apt-get remove xorg-driver-fglrx</code></li><br/>	<li> Eliminar los antiguos .deb de fglrx: <code>sudo rm -f /usr/src/fglrx-kernel*.deb</code></li><br/>	<li> Agregar en la lista negra el antiguo módulo fglrx <code>sudo gedit /etc/default/linux-restricted-modules-common DISABLED_MODULES="fglrx"</code></li><br/>	<li> Alternativamente, elimina el paquete <code>linux-restricted-modules-*</code> de tu kernel, a menos que uses un chip Atheros.  Puede que necesites reiniciar.</li><br/>	<li> Descarga el instalador a tu carpeta personal: <code>wget http://www2.ati.com/drivers/linux/ati-driver-installer-8.42.3-x86.x86_64.run</code></li><br/>	<li> Instala los paquetes necesarios: <code>sudo apt-get install module-assistant build-essential fakeroot dh-make debhelper debconf libstdc++5 linux-headers-generic</code></li><br/>	<li> Crea e instala el paquete .deb: <code>bash ./ati-driver-installer-8.42.3-x86.x86_64.run --buildpkg Ubuntu/gutsy sudo dpkg -i fglrx-kernel-source_8.42.3-1_i386.deb xorg-driver-fglrx_8.42.3-1_i386.deb</code></li><br/>	<li> Compila el módulo del kernel: <code>sudo m-a prepare,update sudo m-a build,install fglrx-kernel</code> sudo depmod</li><br/>	<li> Configura el controlador: <code>sudo gedit /etc/X11/xorg.conf</code></li><br/>	<li> Asegúrate que, en la sección &#8220;Device&#8221;, está puesto el driver &#8220;fglrx&#8221;. Y, si existiera alguna de estas líneas, eliminarla: <code>Section "Extensions"         Option        "Composite"        "0"     # or "Disable" EndSection Section "ServerFlags"         Option        "AIGLX"            "off" EndSection</code></li><br/>	<li> Reiniciar</li><br/>	<li> <code>mkdir -p ~/.config/compiz &amp;&amp; echo SKIP_CHECKS=yes &gt;&gt; ~/.config/compiz/compiz-manager</code> .Esto creará un archivo en tu carpeta personal, que asegurará que Compiz se ejecute sin el prefijo anterior.</li><br/></ol><br/>Y ahora, el .sh para los gandules: <code> #! /bin/bash # Script para la instalación del driver ATI sudo apt-get remove xserver-xgl sudo apt-get remove xorg-driver-fglrx sudo rm -f /usr/src/fglrx-kernel*.deb sudo echo 'DISABLED_MODULES="fglrx"' &gt;&gt; /etc/default/linux-restricted-modules-common wget http://www2.ati.com/drivers/linux/ati-driver-installer-8.42.3-x86.x86_64.run sudo apt-get install module-assistant build-essential fakeroot dh-make debhelper debconf libstdc++5 linux-headers-generic bash ati-driver-installer-8.42.3-x86.x86_64.run --buildpkg Ubuntu/gutsy sudo dpkg -i fglrx-kernel-source_8.42.3-1_i386.deb xorg-driver-fglrx_8.42.3-1_i386.deb sudo m-a prepare,update sudo m-a build,install fglrx-kernel sudo depmod mkdir -p ~/.config/compiz echo SKIP_CHECKS=yes &gt;&gt; ~/.config/compiz/compiz-manager # #Fin. Recordar cambiar el driver en /etc/X11/xorg.conf y asegurarse de que esté activado Composite y AIGLX # </code> El script puede dar errores en apt-get si ya hay instalados paquetes o ya están eliminados.</div></div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/index.html">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 &#8220;Lenny&#8221; Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
