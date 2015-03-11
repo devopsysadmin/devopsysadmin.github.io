@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Postgresql | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/postgresql/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-03-11T14:21:02+01:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hacer Un Pg_dump Aprovechando Los Cores De La Máquina]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/"/>
+    <updated>2015-02-17T16:06:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los</id>
+    <content type="html"><![CDATA[<p>Desde la versión 9.3, postgreSQL permite hacer dumps de la base de datos en forma paralela, aprovechando así el número de cores de la máquina.</p>
+
+
+<p>En una forma rápida, podemos lanzar este proceso:</p>
+
+
+<p><pre>pg_dump -h $MAQUINA -U $USER -d $DATABASE -Fd -j `nproc` -f $DESTINO</pre></p>
+
+
+<p>Las variables son autorreferentes, con lo que la gracia de este comando se encuentra en la opción -Fd (obligatoria para que use diferentes cores), que realiza el dump en un directorio en lugar de un archivo; y la opción -j, que refiere al número de procesos que se lanzan simultáneamente. En este caso, hacemos uso de lo que devuelve <code>nproc</code> para levantar tantos procesos como núcleos.</p>
+
+
+<p>Un pequeño script de backup de base de datos local (perfecto para meter en un cronjob del usuario postgres) sería:</p>
+
+
+<p><div class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;/p&gt;
+
+&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+
+&lt;h2&gt;This script will create a backup <span class="k">for</span> each database listed in the DATABASES variable&lt;/h2&gt;
+
+&lt;h2&gt;Use as postgres user or add the -U <span class="o">[</span>username<span class="o">]</span> to the pg_dump line&lt;/h2&gt;
+
+&lt;p&gt;DATABASES<span class="o">=</span><span class="p">&amp;</span>ldquo<span class="p">;</span>template1 db other_db<span class="p">&amp;</span>rdquo<span class="p">;</span>
+<span class="nv">CORES</span><span class="o">=</span>&lt;code&gt;nproc&lt;/code&gt;
+<span class="nv">TARGET_FOLDER</span><span class="o">=</span>/var/backups&lt;/p&gt;
+
+&lt;p&gt;for DATABASE in <span class="nv">$DATABASES</span><span class="p">;</span> <span class="k">do</span>
+    mkdir -p <span class="nv">$TARGET_FOLDER</span>/<span class="nv">$DATABASE</span>
+    pg_dump -d <span class="nv">$DATABASE</span> -Fd -j <span class="nv">$CORES</span> -f <span class="nv">$TARGET_FOLDER</span>/<span class="nv">$DATABASE</span>
+<span class="k">done</span></code></pre></div></p>
+]]></content>
+  </entry>
+  
+</feed>

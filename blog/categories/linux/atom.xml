@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-03-11T14:21:02+01:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sendlines, Un Expect Simplificado]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado/"/>
+    <updated>2015-02-19T17:17:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado</id>
+    <content type="html"><![CDATA[<p>Para automatizar tareas siempre había hecho uso de <a href="http://www.tcl.tk/man/expect5.31/autoexpect.1.html">autoexpect</a>, ya que, una vez realizado (y guardado) todo la primera vez, sólo había que hacer un par de apaños al script resultante. Sin embargo, hay veces que no necesitamos algo tan sofisticado o no queremos instalar tcl/tsh en la máquina.</p>
+
+
+<p>No hay problema: un pequeño script en python lee de un archivo de texto y le manda, línea a línea, su contenido al ejecutable que hayamos elegido.</p>
+
+
+<p>Seguramente haya muchas cosas por pulir, pero hace lo que tiene que hacer (<a href="http://es.wikipedia.org/wiki/Principio_KISS">Pricipio KISS</a>, que le llaman ;) ). </p>
+
+
+<p> Uso: <code>sendlines -f Fichero_de_texto -c "comando a ejecutar" [ -d delay ]</code>,
+donde:<br />
+<ul>
+    <li>fichero_de_texto: archivo que contiene las lineas que se van a mandar. No contempla comentarios, lo manda del tirón</li>
+    <li>comando: orden que recibirá las entradas de fichero_de_texto. Si tiene parámetros, poner todo el comando entre comillas (ej: &#8220;grep -v grep&#8221;)</li>
+    <li>delay: tiempo entre lineas. Opcional, espera un tiempo (en segundos) entre cada linea que manda</li>
+</ul>
+</p>
+
+
+<p><div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">!</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">env</span> <span class="n">python</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;-&lt;</span><span class="n">em</span><span class="o">&gt;-</span> <span class="n">coding</span><span class="p">:</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span> <span class="o">-&lt;/</span><span class="n">em</span><span class="o">&gt;-&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">getopt</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span><span class="n">textFile</span><span class="p">,</span><span class="n">delay</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">textFile</span><span class="p">,</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">r</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span> <span class="k">as</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">content</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span><span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="o">+&amp;</span><span class="n">lsquo</span><span class="p">;</span>\<span class="n">n</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">delay</span><span class="p">):</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">delay</span><span class="p">))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">usage</span><span class="p">():</span>
+    <span class="k">print</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span>
+        <span class="n">Usage</span><span class="p">:</span> <span class="n">sendlines</span> <span class="o">-</span><span class="n">f</span> <span class="n">textFile</span> <span class="o">-</span><span class="n">c</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">COMMAND</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="p">[</span> <span class="o">-</span><span class="n">d</span> <span class="n">DELAY</span> <span class="p">]</span>
+        <span class="o">-</span> <span class="n">textFile</span><span class="p">:</span> <span class="n">Text</span> <span class="nb">file</span> <span class="n">where</span> <span class="n">read</span> <span class="n">lines</span> <span class="n">from</span><span class="o">.</span> <span class="n">Mandatory</span><span class="o">.</span>
+        <span class="o">-</span> <span class="n">COMMAND</span><span class="p">:</span> <span class="n">Command</span> <span class="n">to</span> <span class="n">be</span> <span class="n">executed</span> <span class="p">(</span><span class="k">if</span> <span class="n">there</span> <span class="n">are</span> <span class="nb">any</span> <span class="n">arguments</span> <span class="n">to</span> <span class="n">be</span> <span class="n">sent</span><span class="p">,</span> <span class="n">must</span> <span class="n">be</span> <span class="n">put</span> <span class="nb">all</span> <span class="n">between</span> <span class="n">quotes</span><span class="p">)</span><span class="o">.</span> <span class="n">Mandatory</span>
+        <span class="o">-</span> <span class="n">DELAY</span><span class="p">:</span> <span class="n">Time</span> <span class="p">(</span><span class="ow">in</span> <span class="n">seconds</span><span class="p">)</span> <span class="n">to</span> <span class="n">wait</span> <span class="n">between</span> <span class="n">sending</span> <span class="n">lines</span><span class="o">.</span> <span class="n">Optional</span><span class="o">.</span>
+        <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+<span class="k">if</span> <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">main</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;&amp;</span><span class="n">rdquo</span><span class="p">;:</span>
+    <span class="n">textFile</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">delay</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">opts</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">getopt</span><span class="o">.</span><span class="n">getopt</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">f</span><span class="p">:</span><span class="n">c</span><span class="p">:</span><span class="n">d</span><span class="p">:</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="nb">file</span><span class="o">=&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">command</span><span class="o">=&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">delay</span><span class="o">=&amp;</span><span class="n">rdquo</span><span class="p">;])</span>
+    <span class="k">except</span> <span class="n">getopt</span><span class="o">.</span><span class="n">GetoptError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="c"># print help information and exit:</span>
+        <span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="c"># will print something like &amp;ldquo;option -a not recognized&amp;rdquo;</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">o</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">-</span><span class="n">f</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">ndash</span><span class="p">;</span><span class="nb">file</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;):</span>
+            <span class="n">textFile</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">elif</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">-</span><span class="n">c</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">ndash</span><span class="p">;</span><span class="n">command</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;):</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
+        <span class="k">elif</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">-</span><span class="n">d</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">ndash</span><span class="p">;</span><span class="n">delay</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;):</span>
+            <span class="n">delay</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">False</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">unhandled</span> <span class="n">option</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+            <span class="n">usage</span><span class="p">()</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">command</span> <span class="ow">and</span> <span class="n">textFile</span><span class="p">):</span>
+        <span class="n">run</span><span class="p">(</span><span class="n">command</span><span class="p">,</span><span class="n">textFile</span><span class="p">,</span><span class="n">delay</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">usage</span><span class="p">()</span>
+        <span class="k">print</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">Missing</span> <span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span> <span class="n">Exit</span>\<span class="n">n</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code></pre></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hacer Un Pg_dump Aprovechando Los Cores De La Máquina]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/"/>
+    <updated>2015-02-17T16:06:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los</id>
+    <content type="html"><![CDATA[<p>Desde la versión 9.3, postgreSQL permite hacer dumps de la base de datos en forma paralela, aprovechando así el número de cores de la máquina.</p>
+
+
+<p>En una forma rápida, podemos lanzar este proceso:</p>
+
+
+<p><pre>pg_dump -h $MAQUINA -U $USER -d $DATABASE -Fd -j `nproc` -f $DESTINO</pre></p>
+
+
+<p>Las variables son autorreferentes, con lo que la gracia de este comando se encuentra en la opción -Fd (obligatoria para que use diferentes cores), que realiza el dump en un directorio en lugar de un archivo; y la opción -j, que refiere al número de procesos que se lanzan simultáneamente. En este caso, hacemos uso de lo que devuelve <code>nproc</code> para levantar tantos procesos como núcleos.</p>
+
+
+<p>Un pequeño script de backup de base de datos local (perfecto para meter en un cronjob del usuario postgres) sería:</p>
+
+
+<p><div class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;/p&gt;
+
+&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+
+&lt;h2&gt;This script will create a backup <span class="k">for</span> each database listed in the DATABASES variable&lt;/h2&gt;
+
+&lt;h2&gt;Use as postgres user or add the -U <span class="o">[</span>username<span class="o">]</span> to the pg_dump line&lt;/h2&gt;
+
+&lt;p&gt;DATABASES<span class="o">=</span><span class="p">&amp;</span>ldquo<span class="p">;</span>template1 db other_db<span class="p">&amp;</span>rdquo<span class="p">;</span>
+<span class="nv">CORES</span><span class="o">=</span>&lt;code&gt;nproc&lt;/code&gt;
+<span class="nv">TARGET_FOLDER</span><span class="o">=</span>/var/backups&lt;/p&gt;
+
+&lt;p&gt;for DATABASE in <span class="nv">$DATABASES</span><span class="p">;</span> <span class="k">do</span>
+    mkdir -p <span class="nv">$TARGET_FOLDER</span>/<span class="nv">$DATABASE</span>
+    pg_dump -d <span class="nv">$DATABASE</span> -Fd -j <span class="nv">$CORES</span> -f <span class="nv">$TARGET_FOLDER</span>/<span class="nv">$DATABASE</span>
+<span class="k">done</span></code></pre></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Debian 5.0 "Lenny" Lanzado]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado/"/>
+    <updated>2009-02-14T12:48:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado</id>
+    <content type="html"><![CDATA[<p>Como ya anunciaran en su momento los chicos de Debian, Lenny ya ha pasado a ser la nueva versión estable de Debian, tras 22 meses de desarrollo desde la salida de Etch. Soporta 12 arquitecturas de procesador e incluye las versiones más estables (que no las últimas) de KDE, Gnome, Xfce y LXDE.<br/><br/>Esto hace que la nueva versión de <em>testing</em> sea Squeeze. Personalmente yo suelo llamarlas por el número, testing y unstable, pero para gustos los colores.<br/><br/>Anuncio de versión: <a target="_blank" href="http://lists.debian.org/debian-announce/2009/msg00002.html"><a href="http://lists.debian.org/debian-announce/2009/msg00002.html">http://lists.debian.org/debian-announce/2009/msg00002.html</a></a><br/><br/>Página oficial de Debian: <a target="_blank" href="http://www.debian.org"><a href="http://www.debian.org">http://www.debian.org</a></a><br/><br/>Y para los que usamos testing, otra buena noticia: se está incluyendo <em>poco a poco</em> la actualización de KDE a 4.2, ahora que la estable ha salido, a la versión unstable, que es el paso previo para testing/squeeze.<br/><br/>Feliz día de los enamorados (de Debian) :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Repositorio Para Testing/amd64]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/02/08/repositorio-para-testingamd64/"/>
+    <updated>2009-02-08T00:51:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/02/08/repositorio-para-testingamd64</id>
+    <content type="html"><![CDATA[<p>He puesto en marcha un pequeño repositorio de paquetes para debian testing (actualmente lenny, en breve squeeze) para la arquitectura amd64.<br/><br/>Ahora mismo sólo está el vlc 0.9.8a, recompilado de los paquetes de ubuntu más un parche que arregla el problema del video integrado, y poca cosa más. Iré agregando según pase el tiempo y la necesidad :)<br/><br/>Los paquetes no van firmados (otra cosa a la que dedicarle tiempo). Os pongo la línea para sources.list:<br/><br/><code>deb <a href="http://davidp.dyndns.org:8080/debian">http://davidp.dyndns.org:8080/debian</a> debian main</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Crítica Humorística a Wine]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine/"/>
+    <updated>2009-01-14T15:30:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine</id>
+    <content type="html"><![CDATA[<p>Wine se encuentra actualmente en su versión de desarrollo 1.1.12 . Desde que el proyecto viera la luz, muchos cambios han pasado por su código fuente, incluída la incorporación/implementación del código necesario para muchas de las funciones de DirectX (¡y van por la 10!), lo que es un logro digno de admiración.<br /><br />No obstante, y pretendiendo ser realistas, las implementaciones del código aún distan de ser suficientes para permitir cualquier juego. Si bien puedo hacer que funcionen títulos como &ldquo;Tomb Raider Anniversary&rdquo;, &ldquo;World of Warcraft&rdquo; o &ldquo;The Witcher&rdquo;, en algunos otros casos debemos decir que sí, que ejecutarse se ejecuta, pero aún queda para decir que es &ldquo;jugable&rdquo;. Por lo menos a ojos del equipo de desarrollo del videojuego.<br /><br />Tal es el caso del Principe de Persia 2008, calidad artística donde las haya, que puede instalarse en Linux (eso nos cuentan los chicos de <a href="http://www.playonlinux.com/es/news-535.html" target="_blank">PlayOnLinux</a>) aunque yo diría que lo que puede hacerse es &ldquo;ejecutarse&rdquo;: hay que bajar la resolución al mínimo, quitar las texturas HD&hellip; en fin, y cuando consigues que funcione, ve guardando cada poco, que puede írsete al cuerno y aparecer tu bonito escritorio (con compiz o sin él).<br /><br />Os pongo una muestra de cómo queda el juego según la plataforma:<br /><br />Win/XBox360<br /><br /><img alt="pop_win_cara" class="aligncenter size-full wp-image-95" src="http://davidpx.files.wordpress.com/2009/01/pop_win_cara.jpg" height="236" title="pop_win_cara" width="253" /><br /> <img alt="pop_win_paisaje" style="width:500px; height:auto;" src="http://davidpx.files.wordpress.com/2009/01/pop_win_paisaje.jpg"  title="pop_win_paisaje"  /><br /><br />Linux, sin texturas, a baja resolución, rezándole a algún beato:<br /><br /><img alt="pop_linux_cara" class="aligncenter size-medium wp-image-99" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_cara.jpg?w=300" height="94" title="pop_linux_cara" width="300" /> <img alt="pop_linux_paisaje" class="aligncenter size-medium wp-image-100" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_paisaje.jpg?w=300" height="250" title="pop_linux_paisaje" width="300" /><br /><br />Bueno, os dejo que tengo un mago que se no sube de nivel solito. Que vuestros días sean largos, y escasos los contratiempos ;)</p>
+]]></content>
+  </entry>
+  
+</feed>

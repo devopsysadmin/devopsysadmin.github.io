@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Qt | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/qt/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-03-11T14:21:02+01:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Nokia Añade La Licencia LGPL a QT]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/01/14/nokia-anade-la-licencia-lgpl-qt/"/>
+    <updated>2009-01-14T12:31:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/01/14/nokia-anade-la-licencia-lgpl-qt</id>
+    <content type="html"><![CDATA[<div align="justify"> Si bien hasta hoy se podía elegir entre la licencia GPL y no pagar por el kit de desarrollo de QT, o su versión comercial y así mantener como cerrado el código generado, Nokia ha añadido el tipo de licencia LGPL tanto a la interfaz de usuario como al kit de desarrollo a partir de la versión 4.5 .<br/><br/>Traduciendo del enlace original (<a href="http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt">http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt</a>), <em>El paso a la licencia LGPL proveerá a los desarrolladores de código fuente tanto libre como comercial una licencia más permisiva que la GPL y, por tanto, aumentar la flexibilidad. Además, los repositorios del código de QT estarán públicamente disponibles y alentará las contribuciones de las comunidades de desarrolladores de escritorio y aplicaciones embebidas. Con estos cambios, los programadores podrán guiar de manera activa la evolución del framework de QT.</em><br/><br/>Las versiones anteriores no ven modificada su licencia GPL.<br/><br/>Mientras escribo este post, veo que en Barrapunto se han hecho eco de la noticia: <a href="http://softlibre.barrapunto.com/article.pl?sid=09/01/14/0849214&amp;from=rss">http://softlibre.barrapunto.com/article.pl?sid=09/01/14/0849214&amp;from=rss</a><br/><br/>Veremos si este cambio de licencia hace que los desarrolladores eligen QT para sus aplicaciones en multiplataforma. Personalmente, todo cambio que dé libertad al programador para desarrollar (y distribuir) un producto, es bienvenido.<br/></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Avidemux "a-la-QT"]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/11/14/avidemux/"/>
+    <updated>2008-11-14T16:52:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/11/14/avidemux</id>
+    <content type="html"><![CDATA[<p>Avidemux es un editor de videos muy similar en características al VirtualDub de otras plataformas. Ya conocía de la existencia de elección entre librería GTK y QT fuera de Linux para este programa, pero gracias al blog <a href="http://ubuntulife.wordpress.com/2008/11/14/avidemux-qt-editor-de-videos/" target="_blank">Ubuntu Life</a> (tardais en ir a visitarlo), veo que también existe para la plataforma del pingüino.<br/><br/>Para tenerlo disponible en Debian (por problemas de licencia, supongo), es necesario tener disponible el repositorio debian-multimedia de Marillat, así que aseguraos de <a href="http://debian-multimedia.org/" target="_blank">visitar su web</a> para comprobar que teneis en vuestro sources.list el repositorio antes de intentar instalarlo:<br/><br/><code>apt-get install avidemux-qt</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[QT Creator, ¿un Posible RAD Para QT/KDE?]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/10/31/qt-creator-un-posible-rad-para-qtkde/"/>
+    <updated>2008-10-31T16:46:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/10/31/qt-creator-un-posible-rad-para-qtkde</id>
+    <content type="html"><![CDATA[<p>Los que nos dedicamos a la programación, ya sea como hobby (mi caso) o como parte del trabajo diario, tenemos que agradecer a Trolltech, la creadora de las bibliotecas QT, el nacimiento de esta nueva herramienta: QT Creator.<br/><br/>QT Creator se presenta como un IDE (Integrated Development Enviroment) ligero y multiplataforma diseñado para hacer más simple la tarea de crear aplicaciones basadas en QT4. Dispone de un asistente (wizard), ayuda rápida, autorelleno de sintaxis y compilador integrado en su versión para Windows (en Linux dispondríamos de los paquetes que vienen en nuestra distribución, con lo que no es problema ninguno).<br/><br/>Aquí os pongo un vídeo demostrativo (el mismo que aparece en la página de trolltech):<br/><p style="text-align:center;"><object height="350" width="425"><br/>      <param name="movie" value="http://www.youtube.com/v/U7yje3D1UM4"><br/>      <param name="wmode" value="transparent"><br/>      <embed src="http://www.youtube.com/v/U7yje3D1UM4;rel=0" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"><br/>      </object></p><br/><br/>Yo lo he estado probando y me ha gustado bastante, acostumbrado que estoy a la interfaz de Delphi. Me falta, sin embargo, una gestión un poco mejor de las señales/slots, pero hay que darle tiempo al tiempo, puesto que la versión final saldrá a primeros del año que viene.<br/><br/>Noticia vista en barrapunto: <a href="http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml" target="_blank"><a href="http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml">http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml</a><br/></a>Enlace a QT Creator, en la página de Trolltech: <a href="http://trolltech.com/developer/qt-creator" target="_blank"><a href="http://trolltech.com/developer/qt-creator">http://trolltech.com/developer/qt-creator</a></a></p>
+]]></content>
+  </entry>
+  
+</feed>
