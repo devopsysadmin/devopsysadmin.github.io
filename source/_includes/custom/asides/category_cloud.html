@@ -6,7 +6,7 @@
 	{% if tag_size > 22 %}
 		{% assign tag_size = 22 %}
 	{%endif%}
-	<span style="font-size:{{tag_size}}px;">
+	<span class="tag" style="font-size:{{tag_size}}px;">
 		<a href="/blog/categories/{{category|first}}">{{ category | first }}</a>
 	</span>
 {% endfor %}
