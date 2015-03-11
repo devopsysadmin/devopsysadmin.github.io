@@ -83,3 +83,19 @@ article .entry-content {
 	font-family: 'Lato', sans-serif;
 	text-align: justify;
 }
+
+div.sharing img{
+  width: 30px;
+  box-shadow: none;
+  border: none;
+}
+
+div.sharing a {
+  white-space: initial;
+  text-decoration: none;
+}
+
+div.sharing td{
+  padding-right: 10px;
+  vertical-align: top;
+}

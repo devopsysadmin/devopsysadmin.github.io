@@ -72,10 +72,11 @@ github_skip_forks: true
 # Twitter
 twitter_user: david_3pwood
 twitter_tweet_button: true
+twitter_bubble: vertical
 
 # Google +1
 google_plus_one: true
-google_plus_one_size: medium
+google_plus_one_size: tall
 
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
@@ -91,11 +92,16 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: devopsysadmin
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: true
+facebook_button_layout: box_count
+
+# LinkedIn Share
+linkedin_share: true
+linkedin_counter: top

@@ -1,0 +1,387 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"project",
+				"project_language"
+			],
+			[
+				"lang",
+				"language_settings_file"
+			],
+			[
+				"lan",
+				"language_settings_file"
+			],
+			[
+				"env",
+				"environment"
+			],
+			[
+				"setu",
+				"setup_config"
+			],
+			[
+				"msg_",
+				"msg_error"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/_includes/post/sharing.html",
+			"settings":
+			{
+				"buffer_size": 670,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_config.yml",
+			"settings":
+			{
+				"buffer_size": 3023,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/_includes/linkedin_share.html",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/_includes/google_plus_one.html",
+			"settings":
+			{
+				"buffer_size": 379,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/david/devel/blog",
+		"/home/david/devel/blog/source",
+		"/home/david/devel/blog/source/_includes"
+	],
+	"file_history":
+	[
+		"/home/david/devel/blog/source/_includes/post/date.html",
+		"/home/david/devel/blog/sass/custom/_styles.scss",
+		"/home/david/devel/blog/source/_includes/custom/header.html",
+		"/home/david/devel/blog/source/_includes/custom/after_footer.html",
+		"/home/david/devel/blog/source/javascripts/addthis.js",
+		"/home/david/devel/blog/source/_includes/post/author.html",
+		"/home/david/devel/blog/src/_layouts/post.html",
+		"/home/david/devel/blog/src/_sass/_base.scss",
+		"/home/david/devel/deployer/projects/appdate-frontend-usa/production/config.yml",
+		"/home/david/devel/deployer/projects/appdate-frontend-usa/production/hosts",
+		"/home/david/devel/deployer/projects/appdate-frontend-usa/base/config.yml",
+		"/home/david/devel/deployer/module/template/base/config.yml",
+		"/home/david/devel/deployer/projects/appdate-frontend/development/hosts",
+		"/home/david/devel/deployer/projects/appdate-frontend/development/config.yml",
+		"/home/david/devel/deployer/projects/appdate-frontend/base/config.yml",
+		"/home/david/devel/deployer/module/app/fabfile.py",
+		"/home/david/devel/deployer/module/app/shell.py",
+		"/home/david/devel/deployer/module/app/language.py",
+		"/home/david/devel/deployer/module/app/scm.py",
+		"/home/david/devel/deployer/module/app/db.py",
+		"/home/david/devel/deployer/projects/appdate-landing/base/config.yml",
+		"/home/david/devel/deployer/projects/appschool-landing/base/config.yml",
+		"/home/david/devel/deployer/projects/promo/base/config.yml",
+		"/home/david/devel/deployer/projects/appdate-landing/production/hosts",
+		"/home/david/devel/deployer/module/app/deploy",
+		"/home/david/devel/deployer/projects/appschool-landing/master/config.yml",
+		"/home/david/devel/deployer/projects/appschool-landing/master/hosts",
+		"/home/david/devel/deployer/projects/appschool-landing/test/config.yml",
+		"/home/david/devel/deployer/projects/appschool-landing/development/config.yml",
+		"/home/david/devel/deployer/projects/atrappo-web/development/hosts",
+		"/home/david/devel/deployer/projects/atrappo-br/hosts",
+		"/home/david/devel/deployer/app/fabfile.py",
+		"/home/david/devel/deployer/projects/tad-mezzanine/test/hosts",
+		"/home/david/devel/deployer/projects/_template/base/config.yml",
+		"/home/david/devel/deployer/projects/appdate-landing/master/config.yml",
+		"/home/david/devel/deployer/projects/appdate-landing/master/hosts",
+		"/home/david/devel/deployer/projects/appdate-landing/test/config.yml",
+		"/home/david/devel/deployer/projects/appdate-landing/test/hosts",
+		"/opt/sublime_text/changelog.txt"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"shell",
+			"internal",
+			"shared_env",
+			"shared",
+			"shell",
+			"langua",
+			"lang",
+			"shell",
+			"settings",
+			"$ROOT/app",
+			"print",
+			"else:"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"folders",
+			"$APP"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/_includes/post/sharing.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								641,
+								641
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3022,
+								3022
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/_includes/linkedin_share.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/_includes/google_plus_one.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 379,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/devel/deployer/deployer.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
