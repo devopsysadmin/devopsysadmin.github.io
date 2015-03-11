@@ -64,24 +64,26 @@
 	"expanded_folders":
 	[
 		"/home/david/devel/blog",
+		"/home/david/devel/blog/sass",
 		"/home/david/devel/blog/sass/custom",
 		"/home/david/devel/blog/source",
 		"/home/david/devel/blog/source/_includes",
-		"/home/david/devel/blog/source/_includes/custom",
+		"/home/david/devel/blog/source/_includes/custom/asides",
 		"/home/david/devel/blog/source/_includes/post",
 		"/home/david/devel/blog/source/_layouts",
 		"/home/david/devel/blog/source/javascripts/libs"
 	],
 	"file_history":
 	[
-		"/home/david/devel/blog/source/_includes/post/author.html",
+		"/home/david/devel/blog/source/_includes/post/sharing.html",
+		"/home/david/devel/blog/source/_includes/article.html",
+		"/home/david/devel/blog/sass/custom/_styles.scss",
 		"/home/david/devel/blog/source/_includes/custom/navigation.html",
+		"/home/david/devel/blog/source/_includes/post/author.html",
 		"/home/david/devel/blog/source/_layouts/page.html",
 		"/home/david/devel/blog/source/_posts/2015-02-23-passwords-con-caracteres-aleatorios.html",
 		"/home/david/devel/blog/source/_posts/2015-02-19-sendlines-un-expect-simplificado.html",
 		"/home/david/devel/blog/source/_includes/custom/footer.html",
-		"/home/david/devel/blog/sass/custom/_styles.scss",
-		"/home/david/devel/blog/source/_includes/post/sharing.html",
 		"/home/david/devel/blog/_config.yml",
 		"/home/david/devel/blog/source/_includes/facebook_like.html",
 		"/home/david/devel/blog/source/_layouts/post.html",
@@ -143,6 +145,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"article header",
 			"shell",
 			"internal",
 			"shared_env",

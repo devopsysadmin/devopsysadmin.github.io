@@ -1,7 +1,5 @@
 {% unless page.no_header %}
   <header>
-
-    {% if index %}
       <h1 class="entry-title">
         <div class="date">
           <abbr>{{post.date | date: "%b"}}</abbr> {{post.date | date: "%-d"}}
@@ -9,21 +7,16 @@
           <sub>{{post.date | date: "%H:%M"}}</sub>
         </div>
 
+    {% if index %}
       <a href="{{ root_url }}{{ post.url }}">
-      {% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+      {% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
     {% else %}
-      <h1 class="entry-title">
-        <div class="date">
-          <abbr>{{page.date | date: "%b"}}</abbr> {{page.date | date: "%-d"}}
-          <sup></sup> <abbr>{{page.date | date: "%y"}}</abbr>
-          <sub>{{page.date | date: "%H:%M"}}</sub>
-        </div>
         <span style="margin-top: -5px">
       {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
       </span></h1>
     {% endif %}
         {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-           | <a class="comments" href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread"
+            <a class="comments" href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread"
              data-disqus-identifier="{% if post.meta.disqus_id %}{{ post.meta.disqus_id }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">Comments</a>
         {% endif %}
     {% unless page.meta == false %}
