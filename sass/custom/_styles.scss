@@ -10,20 +10,23 @@ div.date {
   display: block;
   position: relative;
   width: 60px;
-  margin-right: 10px;
   border: 1px solid #888885;
   border-radius: 5px;
   float: left;
 
   /* day */
-  font: 24px/35px "Helvetica Neue", Arial, sans-serif; text-align: center;
+  text-align: center;
   letter-spacing: 2px; text-decoration: none; color: #666;
   background: #fcfcfc;
+  margin-right: 10px;
 }
 
 div.date sup {
-  position: absolute; padding-top: 4px;
-  font-size: 10px; line-height: 10px; letter-spacing: normal;
+  position: absolute;
+  padding-top: 4px;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: normal;
 }
 
 /* year + month */
@@ -73,10 +76,15 @@ div.date sub {
   padding-bottom: 10px;
 }
 
-div#content .blog-index article h1 a,
+div#content .blog-index article h1,
 article header h1.entry-title{
 	font-family: 'Oswald', sans-serif;
-	font-size: 30px;
+	font-size: 26px;
+}
+
+article header h1.entry-title a{
+    white-space: nowrap;
+
 }
 
 article .entry-content {
@@ -99,3 +107,20 @@ div.sharing td{
   padding-right: 10px;
   vertical-align: top;
 }
+
+article a.comments{
+  font-family: 'Oswald', sans-serif;
+}
+
+article a,
+article a.comments,
+footer category:visited,
+article a.comments:visited{
+  text-decoration: none;
+}
+
+footer a,
+footer a:visited{
+    text-decoration: none;
+}
+
