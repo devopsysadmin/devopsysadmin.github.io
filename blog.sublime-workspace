@@ -35,6 +35,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "source/_layouts/page.html",
+			"settings":
+			{
+				"buffer_size": 1289,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/_layouts/post.html",
+			"settings":
+			{
+				"buffer_size": 1289,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/_includes/article.html",
+			"settings":
+			{
+				"buffer_size": 1873,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -68,16 +92,13 @@
 		"/home/david/devel/blog/sass/custom",
 		"/home/david/devel/blog/source",
 		"/home/david/devel/blog/source/_includes",
-		"/home/david/devel/blog/source/_includes/custom/asides",
-		"/home/david/devel/blog/source/_includes/post",
-		"/home/david/devel/blog/source/_layouts",
-		"/home/david/devel/blog/source/javascripts/libs"
+		"/home/david/devel/blog/source/_layouts"
 	],
 	"file_history":
 	[
-		"/home/david/devel/blog/source/_includes/post/sharing.html",
-		"/home/david/devel/blog/source/_includes/article.html",
 		"/home/david/devel/blog/sass/custom/_styles.scss",
+		"/home/david/devel/blog/source/_includes/article.html",
+		"/home/david/devel/blog/source/_includes/post/sharing.html",
 		"/home/david/devel/blog/source/_includes/custom/navigation.html",
 		"/home/david/devel/blog/source/_includes/post/author.html",
 		"/home/david/devel/blog/source/_layouts/page.html",
@@ -145,6 +166,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"|",
 			"article header",
 			"shell",
 			"internal",
@@ -177,8 +199,99 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "source/_layouts/page.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1062,
+								1062
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/_layouts/post.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1062,
+								1062
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/_includes/article.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								978,
+								978
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
