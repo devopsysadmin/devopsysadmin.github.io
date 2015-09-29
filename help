@@ -1,0 +1,7 @@
+#!/bin/sh
+cat << .
+
+USAGE:
+    - create new post: rake new_post['post title']
+
+.
