@@ -9,7 +9,7 @@ git commit
 git push origin source
 
 rake generate
-rsync -as --exclude=.git --delete-before source/ ../master/
+rsync -as --exclude=.git --delete-before public/ ../master/
 
 cd ../master/
 git add -A .
