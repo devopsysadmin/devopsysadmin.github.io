@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Videojuegos | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/videojuegos/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-03-11T18:07:27+01:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Crítica Humorística a Wine]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine/"/>
+    <updated>2009-01-14T15:30:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine</id>
+    <content type="html"><![CDATA[<p>Wine se encuentra actualmente en su versión de desarrollo 1.1.12 . Desde que el proyecto viera la luz, muchos cambios han pasado por su código fuente, incluída la incorporación/implementación del código necesario para muchas de las funciones de DirectX (¡y van por la 10!), lo que es un logro digno de admiración.<br /><br />No obstante, y pretendiendo ser realistas, las implementaciones del código aún distan de ser suficientes para permitir cualquier juego. Si bien puedo hacer que funcionen títulos como &ldquo;Tomb Raider Anniversary&rdquo;, &ldquo;World of Warcraft&rdquo; o &ldquo;The Witcher&rdquo;, en algunos otros casos debemos decir que sí, que ejecutarse se ejecuta, pero aún queda para decir que es &ldquo;jugable&rdquo;. Por lo menos a ojos del equipo de desarrollo del videojuego.<br /><br />Tal es el caso del Principe de Persia 2008, calidad artística donde las haya, que puede instalarse en Linux (eso nos cuentan los chicos de <a href="http://www.playonlinux.com/es/news-535.html" target="_blank">PlayOnLinux</a>) aunque yo diría que lo que puede hacerse es &ldquo;ejecutarse&rdquo;: hay que bajar la resolución al mínimo, quitar las texturas HD&hellip; en fin, y cuando consigues que funcione, ve guardando cada poco, que puede írsete al cuerno y aparecer tu bonito escritorio (con compiz o sin él).<br /><br />Os pongo una muestra de cómo queda el juego según la plataforma:<br /><br />Win/XBox360<br /><br /><img alt="pop_win_cara" class="aligncenter size-full wp-image-95" src="http://davidpx.files.wordpress.com/2009/01/pop_win_cara.jpg" height="236" title="pop_win_cara" width="253" /><br /> <img alt="pop_win_paisaje" style="width:500px; height:auto;" src="http://davidpx.files.wordpress.com/2009/01/pop_win_paisaje.jpg"  title="pop_win_paisaje"  /><br /><br />Linux, sin texturas, a baja resolución, rezándole a algún beato:<br /><br /><img alt="pop_linux_cara" class="aligncenter size-medium wp-image-99" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_cara.jpg?w=300" height="94" title="pop_linux_cara" width="300" /> <img alt="pop_linux_paisaje" class="aligncenter size-medium wp-image-100" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_paisaje.jpg?w=300" height="250" title="pop_linux_paisaje" width="300" /><br /><br />Bueno, os dejo que tengo un mago que se no sube de nivel solito. Que vuestros días sean largos, y escasos los contratiempos ;)</p>
+]]></content>
+  </entry>
+  
+</feed>

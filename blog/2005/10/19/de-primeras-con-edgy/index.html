@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>De Primeras Con Edgy - /sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="El mezclote SATA-IDE en mi ordenador me está trayendo de cabeza: cuando tengo que hacer un reinicio (normal en un sistema linux/xp), me toca apagar &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2005/10/19/de-primeras-con-edgy/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, pequeños programadores y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Oct</abbr> 19
+          <sup></sup> <abbr>05</abbr>
+          <sub>13:13</sub>
+        </div>
+        <span style="margin-top: -5px">
+      De Primeras Con Edgy
+      </span></h1>
+    
+        
+            <a class="comments" href="#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class="content">El mezclote SATA-IDE en mi ordenador me está trayendo de cabeza: cuando tengo que hacer un reinicio (normal en un sistema linux/xp), me toca apagar el equipo, DESENCHUFARLO y esperar de 10 a 15 min a que libere los condensadores. ¿Por qué? Porque si no, el disco IDE no se enciende. Y puesto que dapper no permite inicio en discos SATA con GRUB, tenía que dejarlo ahí. Vale, pues el disco IDE, que tan por saco me ha dado, acaba de ser eliminado de mi torre. Tenía ya una partición hecha y pensada para NTFS y el futuro Windows Vista, así que le daré uso. Instalar el XP me trae recuerdos&#8230; ains&#8230; xD Instalar edgy con el CD alternate es más cómodo que antes. Aunque se creyera que mi teclado era francés, no hubo problema para corregirle del error. Particionado: ¡Primer fallo! No me deja formatear en XFS, pero sí en Reiser y ext3. Este último siempre me ha fallado por inconsistencia, y aunque tenga los datos en ese sistema de archivos (gracias a IFS for Windows puedo usar la partición), el sistema estará en Reiser (qué remedio). Instalación: pues como siempre, aunque podría decir que hasta ha sido más lenta que de costumbre. Ahora sería cosa de probar la instalación desde LiveCD, a ver qué tan rápido arranca (se supone que han mejorado la velocidad y tal). Arranque: bueno, me esperaba un arranque de grub bonito, pero no. Todo modo texto. Eso sí, rápido de cojones. En mucho menos que lo que dapper, ya tengo mi escritorio disponible para el uso cotidiano. Post-Instalación: en fin, qué voy a decir. Que no llueve a gusto de todos. Actualizar paquetes, instalar nvidia, controladores propietarios multimedia, kdeutils, kdemultimedia (me gusta usar la previsualización en konqueror). Vaporware: otra vez al chroot. Joer, y menos mal que decían que iban a jugar con esa característica. Pues ni simbiosis amd64/i386, ni pruebas con smart (administrador de paquetes y gestor de dependencias), ni xgl (beryl) instalado por defecto. Todo a golpe de apt-get, sí, pero incómodo. Fallos: coño! han arreglado el script de instalación de mldonkey-server&#8230; para que luego el Kmldonkey no conecte! xD En serio, creo que hay un problema de conexión o permisos con los puertos, porque el aMule no funciona tampoco en modo local (amule-utils) para pasarle los parámetros por consola. Por lo demás, pues bien. No va más rápido, pero tampoco va más lento. He actualizado paquetes y listos. Vamos, que si dapper me dejara instalar GRUB en mi disco SATA, podría haberme esperado perfectamente a la versión estable de edgy, o incluso a edgy+1 si ésta mejorara lo actual. Recomendación final: actualízate a edgy cuando sea estable&#8230; y le apliquen un parche xD</div></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard"><span class="fn"></span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2005-10-19T13:13:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2005</span></span> <span class='time'>1:13 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+<table>
+<tr><td>
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2005/10/19/de-primeras-con-edgy/" data-via="david_3pwood" data-count="vertical" data-counturl="http://devopsysadmin.github.io/blog/2005/10/19/de-primeras-con-edgy/" >Tweet</a>
+  
+</td><td>
+  
+  <div class="g-plusone" data-size="tall"></div>
+  
+</td><td>
+  
+    <div class="linkedin-share" data-send="true" data-width="450" data-show-faces="false">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: es_ES</script>
+      <script type="IN/Share" data-url="http://devopsysadmin.github.io/blog/2005/10/19/de-primeras-con-edgy/" data-counter="top"></script>
+    </div>
+  
+</td><td>
+  
+    <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  
+
+</td></tr>
+</table>
+</div>
+<div style="height: 10px;"> </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2005/09/13/acelerando-que-es-xgerundio/" title="Previous Post: Acelerando que es Xgerundio">&laquo; Acelerando que es Xgerundio</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2005/10/22/edgy-rc1/" title="Next Post: Edgy RC1">Edgy RC1 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section id="cloud_tag">
+<h1>Nube de Tags</h1>
+
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/automatizacion">automatización</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:15px;">
+		<a href="/blog/categories/debian">debian</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/edicion">edición</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/escritorio">escritorio</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/grabacion">grabación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/k3b">k3b</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/kde">kde</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/kde 4.2">kde 4.2</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/linux">linux</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/password">password</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/postgresql">postgresql</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/programacion">programación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/python">python</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/qt">qt</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/testing">testing</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/trolltech">trolltech</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/trucos">trucos</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/video">video</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/videojuegos">videojuegos</a>
+	</span>
+
+</section><section>
+  <h1>Art&iacute;culos Recientes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 &#8220;Lenny&#8221; Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>En GitHub</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyleft 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devopsysadmin';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+<script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>

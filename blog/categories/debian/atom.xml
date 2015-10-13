@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Debian | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/debian/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-03-11T18:07:27+01:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Debian 5.0 "Lenny" Lanzado]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado/"/>
+    <updated>2009-02-14T12:48:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado</id>
+    <content type="html"><![CDATA[<p>Como ya anunciaran en su momento los chicos de Debian, Lenny ya ha pasado a ser la nueva versión estable de Debian, tras 22 meses de desarrollo desde la salida de Etch. Soporta 12 arquitecturas de procesador e incluye las versiones más estables (que no las últimas) de KDE, Gnome, Xfce y LXDE.<br/><br/>Esto hace que la nueva versión de <em>testing</em> sea Squeeze. Personalmente yo suelo llamarlas por el número, testing y unstable, pero para gustos los colores.<br/><br/>Anuncio de versión: <a target="_blank" href="http://lists.debian.org/debian-announce/2009/msg00002.html"><a href="http://lists.debian.org/debian-announce/2009/msg00002.html">http://lists.debian.org/debian-announce/2009/msg00002.html</a></a><br/><br/>Página oficial de Debian: <a target="_blank" href="http://www.debian.org"><a href="http://www.debian.org">http://www.debian.org</a></a><br/><br/>Y para los que usamos testing, otra buena noticia: se está incluyendo <em>poco a poco</em> la actualización de KDE a 4.2, ahora que la estable ha salido, a la versión unstable, que es el paso previo para testing/squeeze.<br/><br/>Feliz día de los enamorados (de Debian) :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Repositorio Para Testing/amd64]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2009/02/08/repositorio-para-testingamd64/"/>
+    <updated>2009-02-08T00:51:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/02/08/repositorio-para-testingamd64</id>
+    <content type="html"><![CDATA[<p>He puesto en marcha un pequeño repositorio de paquetes para debian testing (actualmente lenny, en breve squeeze) para la arquitectura amd64.<br/><br/>Ahora mismo sólo está el vlc 0.9.8a, recompilado de los paquetes de ubuntu más un parche que arregla el problema del video integrado, y poca cosa más. Iré agregando según pase el tiempo y la necesidad :)<br/><br/>Los paquetes no van firmados (otra cosa a la que dedicarle tiempo). Os pongo la línea para sources.list:<br/><br/><code>deb <a href="http://davidp.dyndns.org:8080/debian">http://davidp.dyndns.org:8080/debian</a> debian main</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Avidemux "a-la-QT"]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/11/14/avidemux/"/>
+    <updated>2008-11-14T16:52:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/11/14/avidemux</id>
+    <content type="html"><![CDATA[<p>Avidemux es un editor de videos muy similar en características al VirtualDub de otras plataformas. Ya conocía de la existencia de elección entre librería GTK y QT fuera de Linux para este programa, pero gracias al blog <a href="http://ubuntulife.wordpress.com/2008/11/14/avidemux-qt-editor-de-videos/" target="_blank">Ubuntu Life</a> (tardais en ir a visitarlo), veo que también existe para la plataforma del pingüino.<br/><br/>Para tenerlo disponible en Debian (por problemas de licencia, supongo), es necesario tener disponible el repositorio debian-multimedia de Marillat, así que aseguraos de <a href="http://debian-multimedia.org/" target="_blank">visitar su web</a> para comprobar que teneis en vuestro sources.list el repositorio antes de intentar instalarlo:<br/><br/><code>apt-get install avidemux-qt</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VLC 0.9.2, Con Interfaz QT4]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/09/22/vlc-092-con-interfaz-qt4/"/>
+    <updated>2008-09-22T23:01:00+02:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/09/22/vlc-092-con-interfaz-qt4</id>
+    <content type="html"><![CDATA[<p>A estas alturas no es noticia que el reproductor multimedia <a title="VLC" href="http://www.videolan.org" target="_blank">VLC</a> tiene nueva versión, la 0.9.2, y tampoco lo es que su juego de botones y ventanas ha cambiado del wxWindows a QT4. El objetivo de este artículo, no obstante, es el de integrar una aplicación tan útil en el escritorio KDE.<br/><br/>Para empezar, y a sabiendas de que yo uso Debian <em>Testing </em>(sí, <em>testing</em>, y no <em>lenny</em>. Ahora mismo es la misma distribución, pero la <em>testing</em> es cambiante con el tiempo y <em>lenny</em>, cuando pase a estable, tendrá únicamente corrección de fallos de seguridad), comento que habrá que hacer un uso temporal de los repositorios de Ubuntu, puesto que es en la única distro &ldquo;Debian-like&rdquo; que he encontrado paquete.<br/><br/>Ahora, no enmarranemos el sources.list quitando y poniendo lineas de otras distribuciones. Crearemos un nuevo list dentro de <em>/etc/apt/sources.list.d</em> (fijaos que la almohadilla significa con permisos de root, ya sea con &ldquo;<em>su</em>&rdquo; o con &ldquo;<em>sudo</em>&rdquo;, y que no hay salto de línea):<br/><code># echo &ldquo;deb <a href="http://es.archive.ubuntu.com/ubuntu">http://es.archive.ubuntu.com/ubuntu</a> hardy main contrib universe multiverse&rdquo; &gt; /etc/apt/sources.list.d/ubuntu.list<br/># echo &ldquo;deb <a href="http://ppa.launchpad.net/c-korn/ubuntu">http://ppa.launchpad.net/c-korn/ubuntu</a> hardy main&rdquo; &gt;&gt; /etc/apt/sources.list.d/ubuntu.list<br/># apt-get update ; apt-get -y &ndash;purge remove vlc-* ; apt-get install -y &ndash;force-yes vlc<br/># mv /etc/apt/sources.list.d/ubuntu.list /etc/apt/sources.list.d/ubuntu.list.bak<br/># apt-get update</code><br/>Este método lo aplicaremos hasta que la versión 0.9.2 (o superior) no esté, como mínimo, en <em>unstable</em>.<br/><br/>Vale, ya lo tenemos instalado, dependencias satisfechas, limpito otra vez el sources.list &hellip; Ahora vamos a darle un aspecto &ldquo;más KDE&rdquo;. Entrad en Herramientas -&gt; Preferencias. Tendreis la primera pantalla, seleccionamos &ldquo;todo&rdquo; (abajo recuadrado en rojo):<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-002.jpg"><img class="aligncenter size-thumbnail wp-image-52" title="snap-002" src="http://davidpx.files.wordpress.com/2008/09/snap-002.jpg?w=115" alt="" width="115" height="96" /></a><br/><br/>Una vez dentro, en el árbol de la izquierda (esto ya os parecerá más al menú clásico del VLC), seleccionamos Interfaz -&gt; Interfaces principales -&gt; Qt, y desmarcad la opción que os pongo en rojo:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-003.jpg"><img class="aligncenter size-thumbnail wp-image-57" title="snap-003" src="http://davidpx.files.wordpress.com/2008/09/snap-003.jpg?w=115" alt="" width="115" height="96" /></a><br/><br/>Personalmente también le he quitado el icono de la bandeja de entrada, pero eso ya va más al gusto de cada uno.<br/><br/>Y para que veais cómo queda de integrado, sin pieles (skins) ni nada, una captura de mi escritorio:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-001.jpg"><img class="aligncenter size-thumbnail wp-image-56" title="snap-001" src="http://davidpx.files.wordpress.com/2008/09/snap-001.jpg?w=120" alt="" width="120" height="96" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vuelta a Debian]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/09/10/vuelta-debian/"/>
+    <updated>2008-09-10T18:48:00+02:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/09/10/vuelta-debian</id>
+    <content type="html"><![CDATA[<p>Tras todo este tiempo perteneciendo a la saga de seguidores de <a href="http://kubuntu-es.org" target="_blank">kubuntu</a>, vuelvo a mi sitio dentro de la comunidad <a href="http://debian.org" target="_blank">Debian</a>.<br/><br/>¿Por qué? Primero, porque Debian es una excelente solución para servidores y equipos que requieren estabilidad por encima de actualizaciones. Segundo, porque los paquetes &ldquo;testing&rdquo;, a pesar de su nombre, son bastante sólidos y se actualizan cada poco. Y tercero, porque creo que la hija Ubuntu tiene demasiados avalorios que a mí me resultan algo incómodos. No soy propenso al escritorio espartano (salvo en el ámbito laboral, en el que prefiero consola y herramientas gráficas básicas), y de hecho tengo agregado el repositorio de kde4 para debian Lenny, pero es que hay algo en esta distribución que me convence cada vez más.<br/><br/>En fin, ya os iré contando programas, consejos, trucos y métodos de afinamiento para esta distribución.</p>
+]]></content>
+  </entry>
+  
+</feed>
