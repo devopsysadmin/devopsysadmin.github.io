@@ -1,11 +1,22 @@
 #!/bin/sh
-if [ `basename $PWD` = bin ]; then
-	cd ..
+if [ `basename $PWD` = bin ]; then cd .. ; fi
+HERE=$PWD
+mkdir -p $HERE/octopress
+
+if [ ! -d $HERE/octopress/code ]; then
+	git clone https://github.com/imathis/octopress.git $HERE/octopress/code
+else
+	cd $HERE/octopress/code && git pull
 fi
 
-git clone https://github.com/imathis/octopress.git octopress
-rsync -aS --delete-before octopress/plugins/ plugins/
-rm -fR octopress/.git* octopress/_config.yml octopress/*.markdown
-rsync -aS octopress/ $PWD/
-rm -fR octopress
-bundle install
+rsync -aS $HERE/octopress/code/ $HERE/octopress/updated/ \
+	--exclude=.git* \
+	--exclude=_config.yml \
+	--exclude=*.markdown
+
+
+rsync -aS --delete-before $HERE/octopress/updated/plugins/ $HERE/plugins/
+rsync -aS $HERE/octopress/updated/ $HERE/
+
+cd $HERE
+bundle install --path .bundle
