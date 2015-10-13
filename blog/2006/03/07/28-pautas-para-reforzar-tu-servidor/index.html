@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>28 Pautas Para Reforzar Tu Servidor Linux - /sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="Traducción libre de http://kevin.hatfieldfamilysite.com/?p=147:1. En tu cortafuegos (tienes uno, ¿verdad?) confirma que el puerto MySQL para &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2006/03/07/28-pautas-para-reforzar-tu-servidor/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-68777841-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, devops y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Mar</abbr> 7
+          <sup></sup> <abbr>06</abbr>
+          <sub>03:21</sub>
+        </div>
+        <span style="margin-top: -5px">
+      28 Pautas Para Reforzar Tu Servidor Linux
+      </span></h1>
+    
+        
+            <a class="comments" href="#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Traducción libre de <a href="http://kevin.hatfieldfamilysite.com/?p=147" target="_blank">http://kevin.hatfieldfamilysite.com/?p=147</a>:<br/><br/>1. En tu cortafuegos (tienes uno, ¿verdad?) confirma que el puerto MySQL para entrantes es el 3306 y ciérralo. Si este puerto se queda abierto se expone tanto a un abuso de servicio y una amenaza de seguridad ya que no sólo los hackers pueden irrumpir en MySQL, sino que cualquier usuario puede almacenar su base SQL en tu servidor y acceder desde cualquier equipo, y así (ab)usar los recursos de tu servidor.<br/><br/>2. Chequea los permisos de /tmp. Deberían estar en chmod 1777<br/><br/>3. Chequea el propietario de /tmp. Debería pertenecer a root:root<br/><br/>4. Chequea /etc/cron.daily/logrotate. Debido a un bug en logrotate, si se monta /tmp con la opción noexec, necesitas que logrotate use un directorio temporal diferente. Si no lo haces, este syslog puede no reiniciarse correctamente y escribirá sobre archivos antiguos/incorrectos.<br/><br/>5. Chequea los permisos de /var/tmp. Debería estar en chmod 1777<br/><br/>6. Chequea el propietario de /var/tmp. Debería pertenecer a root:root<br/><br/>7. Chequea que /var/tmp está montado como sistema de archivos. No debería estar enlazado (ln -s) a /tmp o montado como un sistema de archivos.<br/><br/>8. Chequea que /var/tmp está montado con noexec,nosuid. Normalmente no tiene estas opciones, con lo que deberías considerar agregar un punto de montaje en /etc/fstab con esas opciones.<br/><br/>9. Chequea los permisos de /usr/tmp. Deberia estar en chmod 1777<br/><br/>10. Chequea el propietario de /usr/tmp. Deberia pertenecer a root:root<br/><br/>11. Chequea que /usr/tmp está montado como sistema de archivos o es un enlace simbólico (ln -s) de /tmp.<br/><br/>12. Chequea /etc/resolv.conf . No deberías especificar como nombre de servidor (nameserver) a 127.0.0.1 o a localhost. Usa la IP principal de los servidores en su lugar. Chequea 12b. Chequea /etc/named.conf por las restricciones de recursividad . Si tienes un servidor DNS local ejecutándose pero no tienes restricciones de recursividad establecidas, es un riesgo de seguridad y de rendimiento tan buenos como ataques DDoS contra tu sistema, con lo que deberías establecerlo sólo para las direcciones IP locales.<br/><br/>13. Chequea el runlevel del servidor. Para un entorno seguro deberías ejecutar el servidor sólo a nivel 3. Puedes solucinarlo editando /etc/inittab y cambiando la linea de "initdefault" a como sigue: <code>id:3:initdefault</code> y luego reiniciar el servidor.<br/><br/>14. Chequea el cron del usuario "nobody". Tienes un registro de nobody que deberías chequear si no ha sido creado por un exploit.<br/><br/>15. Chequea el soporte del Sistema Operativo. Asegírante que tu versión aún tiene soporte del fabricante y que las actualizaciones aún siguen disponibles.<br/><br/>16. Chequea si SSHv1 está desactivado. Deberías, editando /etc/ssh/sshd:config y configurando: Protocol 2 (eliminando la almohadilla del principio de linea y editando donde pone "1.1")<br/><br/>17. Chequea si SSH está en un puerto no-estándar. Mover SSH a un puerto no-estándar evita escaneos básicos de puertos SSH. Edita /etc/ssh/sshd_config y configura Port nnnn, donde nnnn es un puerto a tu elección. ¡No olvides abrir el puerto en el cortafuegos antes!<br/><br/>18. Chequea en SSH "PasswordAuthentication". Para la seguridad definitiva de SSH, puedes considerar desactivar esta opción y permitir acceso sólo usando "PubKeyAuthentication".<br/><br/>19. Chequea que el puerto 23 de telnet no está en uso. Cierra este puerto en tu cortafuegos. Telnet es un protocolo inseguro y deberías desactivar el servicio telnet si está ejecutándose.<br/><br/>20. Chequea los límites de recursos de la shell. Deberías activarlos para prevenir que los usuarios de shell consuman recursos de servidor (exploits de DoS, mayormente). Si estás usando cPanel/WHM activa "Shell Fork Bomb Protection".<br/><br/>21. Desactiva todas las instancias de IRC - BitchX, bnc, eggdrop, sniffers genéricos, servicios guardianes, ircd, psyBNC, ptlink. Si estás usando WHM puedes hacerlo en "Background Process Killer".<br/><br/>22. Chequea el modulo mod_security en apache. Debería estar instalado.<br/><br/>23. Chequea el modulo mod_evasive en apache- Deberías instalarlo desde el código fuente para evitar ataques DoS contra apache. Cuidado porque este módulo se carga la funcionalidad de FrontPage.<br/><br/>24. Chequea el valor RLimitCPU de apache. Deberías establecer un valor para evitar scripts que consuman recursos de servidor (exploits de DoS).<br/><br/>25. Igualmente para el valor RLimitMEM.<br/><br/>26. Chequea el valor de enable_dl en php. Deberías modificar /usr/local/lib/php.ini y configurar <code>enable_dl = off</code>. Esto previene a los usuarios de ejecutar modulos php que afecten a cualquiera en el servidor. Nota que si se usan librerías dinámicas, como ioncube, deberás cargarlas directamente en php.ini<br/><br/>27. Chequea el valor de disable_functions en php. Deberías modificar /usr/local/lib/php.ini y desactivar las funciones más comúnmente atacadas. Por ejemplo:<code>disable_functions = show_resource, system, shell_exec, passthru, exec, phpinfo, popen, proc_open</code>. Algunos scripts de clientes web pueden fallar con algunas de estas funciones desactivadas, así que tendrás que quitarlas de esta lista.<br/><br/>28. Chequea phpsuexec. Para reducir el riesgo de que hackers accedan a todos los sitios del servidor desde un script web, deberías activar phpsuexec cuando construyes apache/php. Nota que hay efectos laterales cuando se activa phpsuexec en un servidor y debes tenerlos en cuenta antes de activarlos.</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard"><span class="fn"></span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2006-03-07T03:21:00-08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>3:21 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+<table>
+<tr><td>
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2006/03/07/28-pautas-para-reforzar-tu-servidor/" data-via="david_3pwood" data-count="vertical" data-counturl="http://devopsysadmin.github.io/blog/2006/03/07/28-pautas-para-reforzar-tu-servidor/" >Tweet</a>
+  
+</td><td>
+  
+  <div class="g-plusone" data-size="tall"></div>
+  
+</td><td>
+  
+    <div class="linkedin-share" data-send="true" data-width="450" data-show-faces="false">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: es_ES</script>
+      <script type="IN/Share" data-url="http://devopsysadmin.github.io/blog/2006/03/07/28-pautas-para-reforzar-tu-servidor/" data-counter="top"></script>
+    </div>
+  
+</td><td>
+  
+    <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  
+
+</td></tr>
+</table>
+</div>
+<div style="height: 10px;"> </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/01/16/instalador-de-ubuntu-para-windows/" title="Previous Post: Instalador de Ubuntu para Windows">&laquo; Instalador de Ubuntu para Windows</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/05/17/kreo-k-hestoi-listo-xa-canviar-linus/" title="Next Post: Kreo k hestoi listo xa canviar a linus">Kreo k hestoi listo xa canviar a linus &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section id="cloud_tag">
+<h1>Nube de Tags</h1>
+
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/automatizacion">automatización</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:15px;">
+		<a href="/blog/categories/debian">debian</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/edicion">edición</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/escritorio">escritorio</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/grabacion">grabación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/k3b">k3b</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/kde">kde</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/kde 4.2">kde 4.2</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/linux">linux</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/password">password</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/postgresql">postgresql</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/programacion">programación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/python">python</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/qt">qt</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/testing">testing</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/trolltech">trolltech</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/trucos">trucos</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/video">video</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/videojuegos">videojuegos</a>
+	</span>
+
+</section><section>
+  <h1>Art&iacute;culos Recientes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 "Lenny" Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>En GitHub</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyleft 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devopsysadmin';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+<script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>

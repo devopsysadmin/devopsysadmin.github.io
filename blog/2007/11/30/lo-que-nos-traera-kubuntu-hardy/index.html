@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Lo Que Nos Traerá Kubuntu Hardy - /sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="Me ha dado por leerme los blueprints para Hardy, que viene a ser la lista de cosas que les gustaría tener implementadas para esta nueva versión de &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2007/11/30/lo-que-nos-traera-kubuntu-hardy/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-68777841-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, devops y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Nov</abbr> 30
+          <sup></sup> <abbr>07</abbr>
+          <sub>03:24</sub>
+        </div>
+        <span style="margin-top: -5px">
+      Lo Que Nos Traerá Kubuntu Hardy
+      </span></h1>
+    
+        
+            <a class="comments" href="#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Me ha dado por leerme los <a href="https://blueprints.launchpad.net/ubuntu/hardy" target="_blank">blueprints para Hardy</a>, que viene a ser la lista de cosas que les gustaría tener implementadas para esta nueva versión de Kubuntu. Como usuario de KDE que soy, voy a centrarme en lo que nos quieren traer y que afecte a nuestro K-Escritorio.<br/><ul><br/>	<li><strong>Autenticación con Dominios Windows</strong>. Esto tal vez no sea útil para los usuarios convencionales (aka Home/Desktop-users), pero sí para entornos de trabajo. Imaginaos la de programas que hay que utilizan autenticación LDAP o de Active Directory. Imaginaos ahora que un usuario de ubuntu tuviera que andar "enguarrándose" con usuario y contraseña POR APLICACIÓN. Y peor aún, imaginaos a un usuario cuyo administrador de sistemas (que es su labor) cambia las contraseñas cada X tiempo. ¿Entendéis lo útil que puede llegar a ser?</li><br/>	<li><strong>Continúa la integración con KDE 4</strong>. Aunque hardy no lo traerá por defecto (pensad que es una LTS y quieren estar muy MUY seguros de que todo va a ir como la seda), se van integrando elementos del futuro KDE 4 en Kubuntu. Se usará la estructura de empaquetación de Debian, pero sustituyendo todo aquello que indique kde por kde4, para que coexistan ambos escritorios de manera temporal. Así, en vez de kdebase, por ejemplo, el paquete se llamaría kde4base, se instalará en /usr/lib/kde4, etc.</li><br/>	<li><strong>Hacer lo mismo que hace Ubuntu</strong>. Puede parecer una chorrada, y bastante mal me parece que tengan que planteárselo como propósito en vez de ser algo inherente, pero aquí está. Quieren que Kubuntu tenga las mismas funcionalidades de Ubuntu. ¿Ninguno se ha tomado Kubuntu Gutsy como un Ubuntu Feisty con paquetes actualizados? Se debe a la preferencia (y cantidad de gente) que se da al escritorio con Gnome. Parece que se van a poner las pilas y ofrecer módulos de configuración de compiz en ksystemsettings (el pseudo-sustituto de kcontrol), instalación automática de impresoras (como ya hace Ubuntu Gutsy), instalación automática de códecs en kaffeine, etc. Para mantener coherencia con KDE 4, usarán PyQT4.</li><br/></ul><br/>El resto de características en blueprints (44 a fecha de hoy) tienen una influencia mayor en Gnome o en el futuro GoBuntu, Ubuntu optimizado para su virtualización.</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard"><span class="fn"></span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2007-11-30T03:24:00-08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>3:24 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+<table>
+<tr><td>
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2007/11/30/lo-que-nos-traera-kubuntu-hardy/" data-via="david_3pwood" data-count="vertical" data-counturl="http://devopsysadmin.github.io/blog/2007/11/30/lo-que-nos-traera-kubuntu-hardy/" >Tweet</a>
+  
+</td><td>
+  
+  <div class="g-plusone" data-size="tall"></div>
+  
+</td><td>
+  
+    <div class="linkedin-share" data-send="true" data-width="450" data-show-faces="false">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: es_ES</script>
+      <script type="IN/Share" data-url="http://devopsysadmin.github.io/blog/2007/11/30/lo-que-nos-traera-kubuntu-hardy/" data-counter="top"></script>
+    </div>
+  
+</td><td>
+  
+    <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  
+
+</td></tr>
+</table>
+</div>
+<div style="height: 10px;"> </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/10/24/los-drivers-de-ati-listos-para-su-uso/" title="Previous Post: Los drivers de ATI listos para su uso con Compiz">&laquo; Los drivers de ATI listos para su uso con Compiz</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/01/03/kde-40-no-es-kde4/" title="Next Post: KDE 4.0 no es KDE4">KDE 4.0 no es KDE4 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section id="cloud_tag">
+<h1>Nube de Tags</h1>
+
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/automatizacion">automatización</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:15px;">
+		<a href="/blog/categories/debian">debian</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/edicion">edición</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/escritorio">escritorio</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/grabacion">grabación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/k3b">k3b</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/kde">kde</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/kde 4.2">kde 4.2</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/linux">linux</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/password">password</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/postgresql">postgresql</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/programacion">programación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/python">python</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/qt">qt</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/testing">testing</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/trolltech">trolltech</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/trucos">trucos</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/video">video</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/videojuegos">videojuegos</a>
+	</span>
+
+</section><section>
+  <h1>Art&iacute;culos Recientes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 "Lenny" Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>En GitHub</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyleft 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devopsysadmin';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+<script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>

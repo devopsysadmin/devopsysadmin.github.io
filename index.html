@@ -1,29 +1,852 @@
----
-layout: default
----
 
-<div class="blog-index">
-  {% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>/sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="En muchas ocasiones, cuando tenemos que crear un servicio que pide usuario/password, tendemos al uso de passwords simples o poco elaboradas. Tanto si &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-68777841-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, devops y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
     <article>
-      {% include article.html %}
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Feb</abbr> 23
+          <sup></sup> <abbr>15</abbr>
+          <sub>07:01</sub>
+        </div>
+
+      <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">
+      Passwords Con Caracteres Aleatorios</a></h1>
+    
+        
+            <a class="comments" href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>En muchas ocasiones, cuando tenemos que crear un servicio que pide usuario/password, tendemos al uso de passwords simples o poco elaboradas. Tanto si es para un uso personal como si es para compartir información entre usuarios (este, quizás, más importante aún securizar), las password simples o basadas en diccionarios no son del todo una buena idea.</p> <p>Este pequeño script de python genera una clave de N caracteres aleatorios (pasados por argumento, o 10 en su defecto), que puede añadir símbolos indicando el argumento "@".</p> 
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">string</span><span class="o">,</span><span class="nn">random</span><span class="o">,</span><span class="nn">sys</span>
+
+<span class="n">dictionary</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span>
+<span class="n">dictionary_extra</span> <span class="o">=</span> <span class="s">&#39;@.-!~&#39;</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">):</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="s">&#39;@&#39;</span><span class="p">):</span>
+		<span class="n">dictionary</span> <span class="o">+=</span> <span class="n">dictionary_extra</span>
+		<span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">):</span>
+			<span class="n">N</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">SystemRandom</span><span class="p">()</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))</span></code></pre></div>
+
+
+<p>Ejemplos de uso: <br />
+<pre>
+$ python randompasswd @20
+Dk5nl8w~.WxrkEj94!V~
+
+$ python randompasswd @
+0KAiU0z@rC
+
+$ python randompasswd
+eqUL9Kaw22G1QFc
+</pre></div>
+  
+  
+
+
     </article>
-  {% endfor %}
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Feb</abbr> 19
+          <sup></sup> <abbr>15</abbr>
+          <sub>08:17</sub>
+        </div>
+
+      <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">
+      Sendlines, Un Expect Simplificado</a></h1>
+    
+        
+            <a class="comments" href="/blog/2015/02/19/sendlines-un-expect-simplificado/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Para automatizar tareas siempre había hecho uso de <a href="http://www.tcl.tk/man/expect5.31/autoexpect.1.html">autoexpect</a>, ya que, una vez realizado (y guardado) todo la primera vez, sólo había que hacer un par de apaños al script resultante. Sin embargo, hay veces que no necesitamos algo tan sofisticado o no queremos instalar tcl/tsh en la máquina.</p>
+<p>No hay problema: un pequeño script en python lee de un archivo de texto y le manda, línea a línea, su contenido al ejecutable que hayamos elegido.</p>
+<p>Seguramente haya muchas cosas por pulir, pero hace lo que tiene que hacer (<a href="http://es.wikipedia.org/wiki/Principio_KISS">Pricipio KISS</a>, que le llaman ;) ). </p>
+<p> Uso: <code>sendlines -f Fichero_de_texto -c "comando a ejecutar" [ -d delay ]</code>,
+donde:<br />
+<ul>
+	<li>fichero_de_texto: archivo que contiene las lineas que se van a mandar. No contempla comentarios, lo manda del tirón</li>
+	<li>comando: orden que recibirá las entradas de fichero_de_texto. Si tiene parámetros, poner todo el comando entre comillas (ej: "grep -v grep")</li>
+	<li>delay: tiempo entre lineas. Opcional, espera un tiempo (en segundos) entre cada linea que manda</li>
+</ul>
+</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">getopt</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span><span class="n">textFile</span><span class="p">,</span><span class="n">delay</span><span class="p">):</span>
+	<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">textFile</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text</span><span class="p">:</span>
+		<span class="n">content</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+	<span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span><span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+		<span class="n">p</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="o">+</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">delay</span><span class="p">):</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">delay</span><span class="p">))</span>
+	<span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">p</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">usage</span><span class="p">():</span>
+	<span class="k">print</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">		Usage: sendlines -f textFile -c &quot;COMMAND&quot; [ -d DELAY ]</span>
+<span class="s">		- textFile: Text file where read lines from. Mandatory.</span>
+<span class="s">		- COMMAND: Command to be executed (if there are any arguments to be sent, must be put all between quotes). Mandatory</span>
+<span class="s">		- DELAY: Time (in seconds) to wait between sending lines. Optional.</span>
+<span class="s">		&#39;&#39;&#39;</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="n">textFile</span> <span class="o">=</span> <span class="bp">None</span>
+	<span class="n">command</span> <span class="o">=</span> <span class="bp">None</span>
+	<span class="n">delay</span> <span class="o">=</span> <span class="bp">None</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">opts</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">getopt</span><span class="o">.</span><span class="n">getopt</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="s">&quot;f:c:d:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;file=&quot;</span><span class="p">,</span> <span class="s">&quot;command=&quot;</span><span class="p">,</span> <span class="s">&quot;delay=&quot;</span><span class="p">])</span>
+	<span class="k">except</span> <span class="n">getopt</span><span class="o">.</span><span class="n">GetoptError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+		<span class="c"># print help information and exit:</span>
+		<span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="c"># will print something like &quot;option -a not recognized&quot;</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">o</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-f&quot;</span><span class="p">,</span> <span class="s">&quot;--file&quot;</span><span class="p">):</span>
+			<span class="n">textFile</span> <span class="o">=</span> <span class="n">a</span>
+		<span class="k">elif</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-c&quot;</span><span class="p">,</span> <span class="s">&quot;--command&quot;</span><span class="p">):</span>
+			<span class="n">command</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">o</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-d&quot;</span><span class="p">,</span> <span class="s">&quot;--delay&quot;</span><span class="p">):</span>
+			<span class="n">delay</span> <span class="o">=</span> <span class="n">a</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">assert</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&quot;unhandled option&quot;</span>
+			<span class="n">usage</span><span class="p">()</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">command</span> <span class="ow">and</span> <span class="n">textFile</span><span class="p">):</span>
+		<span class="n">run</span><span class="p">(</span><span class="n">command</span><span class="p">,</span><span class="n">textFile</span><span class="p">,</span><span class="n">delay</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">usage</span><span class="p">()</span>
+		<span class="k">print</span> <span class="s">&#39;Missing argument(s). Exit</span><span class="se">\n</span><span class="s">&#39;</span>
+		<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code></pre></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Feb</abbr> 17
+          <sup></sup> <abbr>15</abbr>
+          <sub>07:06</sub>
+        </div>
+
+      <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">
+      Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a></h1>
+    
+        
+            <a class="comments" href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Desde la versión 9.3, postgreSQL permite hacer dumps de la base de datos en forma paralela, aprovechando así el número de cores de la máquina.</p>
+<p>En una forma rápida, podemos lanzar este proceso:</p>
+<p><pre>pg_dump -h $MAQUINA -U $USER -d $DATABASE -Fd -j `nproc` -f $DESTINO</pre></p>
+<p>Las variables son autorreferentes, con lo que la gracia de este comando se encuentra en la opción -Fd (obligatoria para que use diferentes cores), que realiza el dump en un directorio en lugar de un archivo; y la opción -j, que refiere al número de procesos que se lanzan simultáneamente. En este caso, hacemos uso de lo que devuelve <code>nproc</code> para levantar tantos procesos como núcleos.</p>
+<p>Un pequeño script de backup de base de datos local (perfecto para meter en un cronjob del usuario postgres) sería:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+<span class="c">## This script will create a backup for each database listed in the DATABASES variable</span>
+<span class="c">## Use as postgres user or add the -U [username] to the pg_dump line</span>
+
+<span class="nv">DATABASES</span><span class="o">=</span><span class="s2">&quot;template1 db other_db&quot;</span>
+<span class="nv">CORES</span><span class="o">=</span><span class="sb">`</span>nproc<span class="sb">`</span>
+<span class="nv">TARGET_FOLDER</span><span class="o">=</span>/var/backups
+
+<span class="k">for</span> DATABASE in <span class="nv">$DATABASES</span><span class="p">;</span> <span class="k">do</span>
+	mkdir -p <span class="nv">$TARGET_FOLDER</span>/<span class="nv">$DATABASE</span>
+	pg_dump -d <span class="nv">$DATABASE</span> -Fd -j <span class="nv">$CORES</span> -f <span class="nv">$TARGET_FOLDER</span>/<span class="nv">$DATABASE</span>
+<span class="k">done</span></code></pre></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Feb</abbr> 17
+          <sup></sup> <abbr>15</abbr>
+          <sub>06:24</sub>
+        </div>
+
+      <a href="/blog/2015/02/17/recuperando-el-blog/">
+      Recuperando El Blog</a></h1>
+    
+        
+            <a class="comments" href="/blog/2015/02/17/recuperando-el-blog/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2015/02/17/recuperando-el-blog/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">¡Buenas!<br/><br/>Han pasado unas cuantas (CUANTAS) cosas desde que hice mi última entrada, tanto en mi vida como en el mundo linux. Desconozco la frecuencia con la que escribiré de nuevo, pero quiero darle un uso de sysadmin a este pobre blog, añadiendo trucos, utilidades y tuneaje, aparte de hablar de los pequeños proyectos que tengo en GitHub.<br/><br/>Así que, abracetes y ¡let the Hunger Games begin!</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Feb</abbr> 14
+          <sup></sup> <abbr>09</abbr>
+          <sub>03:48</sub>
+        </div>
+
+      <a href="/blog/2009/02/14/kde-50-lanzado/">
+      Debian 5.0 "Lenny" Lanzado</a></h1>
+    
+        
+            <a class="comments" href="/blog/2009/02/14/kde-50-lanzado/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Como ya anunciaran en su momento los chicos de Debian, Lenny ya ha pasado a ser la nueva versión estable de Debian, tras 22 meses de desarrollo desde la salida de Etch. Soporta 12 arquitecturas de procesador e incluye las versiones más estables (que no las últimas) de KDE, Gnome, Xfce y LXDE.<br/><br/>Esto hace que la nueva versión de <em>testing</em> sea Squeeze. Personalmente yo suelo llamarlas por el número, testing y unstable, pero para gustos los colores.<br/><br/>Anuncio de versión: <a target="_blank" href="http://lists.debian.org/debian-announce/2009/msg00002.html">http://lists.debian.org/debian-announce/2009/msg00002.html</a><br/><br/>Página oficial de Debian: <a target="_blank" href="http://www.debian.org">http://www.debian.org</a><br/><br/>Y para los que usamos testing, otra buena noticia: se está incluyendo <em>poco a poco</em> la actualización de KDE a 4.2, ahora que la estable ha salido, a la versión unstable, que es el paso previo para testing/squeeze.<br/><br/>Feliz día de los enamorados (de Debian) :D</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Feb</abbr> 7
+          <sup></sup> <abbr>09</abbr>
+          <sub>15:51</sub>
+        </div>
+
+      <a href="/blog/2009/02/07/repositorio-para-testingamd64/">
+      Repositorio Para Testing/amd64</a></h1>
+    
+        
+            <a class="comments" href="/blog/2009/02/07/repositorio-para-testingamd64/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2009/02/07/repositorio-para-testingamd64/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">He puesto en marcha un pequeño repositorio de paquetes para debian testing (actualmente lenny, en breve squeeze) para la arquitectura amd64.<br/><br/>Ahora mismo sólo está el vlc 0.9.8a, recompilado de los paquetes de ubuntu más un parche que arregla el problema del video integrado, y poca cosa más. Iré agregando según pase el tiempo y la necesidad :)<br/><br/>Los paquetes no van firmados (otra cosa a la que dedicarle tiempo). Os pongo la línea para sources.list:<br/><br/><code>deb http://davidp.dyndns.org:8080/debian debian main</code></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Jan</abbr> 14
+          <sup></sup> <abbr>09</abbr>
+          <sub>06:30</sub>
+        </div>
+
+      <a href="/blog/2009/01/14/critica-humoristica-wine/">
+      Crítica Humorística a Wine</a></h1>
+    
+        
+            <a class="comments" href="/blog/2009/01/14/critica-humoristica-wine/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Wine se encuentra actualmente en su versión de desarrollo 1.1.12 . Desde que el proyecto viera la luz, muchos cambios han pasado por su código fuente, incluída la incorporación/implementación del código necesario para muchas de las funciones de DirectX (¡y van por la 10!), lo que es un logro digno de admiración.<br /><br />No obstante, y pretendiendo ser realistas, las implementaciones del código aún distan de ser suficientes para permitir cualquier juego. Si bien puedo hacer que funcionen títulos como "Tomb Raider Anniversary", "World of Warcraft" o "The Witcher", en algunos otros casos debemos decir que sí, que ejecutarse se ejecuta, pero aún queda para decir que es "jugable". Por lo menos a ojos del equipo de desarrollo del videojuego.<br /><br />Tal es el caso del Principe de Persia 2008, calidad artística donde las haya, que puede instalarse en Linux (eso nos cuentan los chicos de <a href="http://www.playonlinux.com/es/news-535.html" target="_blank">PlayOnLinux</a>) aunque yo diría que lo que puede hacerse es "ejecutarse": hay que bajar la resolución al mínimo, quitar las texturas HD... en fin, y cuando consigues que funcione, ve guardando cada poco, que puede írsete al cuerno y aparecer tu bonito escritorio (con compiz o sin él).<br /><br />Os pongo una muestra de cómo queda el juego según la plataforma:<br /><br />Win/XBox360<br /><br /><img alt="pop_win_cara" class="aligncenter size-full wp-image-95" src="http://davidpx.files.wordpress.com/2009/01/pop_win_cara.jpg" height="236" title="pop_win_cara" width="253" /><br /> <img alt="pop_win_paisaje" style="width:500px; height:auto;" src="http://davidpx.files.wordpress.com/2009/01/pop_win_paisaje.jpg"  title="pop_win_paisaje"  /><br /><br />Linux, sin texturas, a baja resolución, rezándole a algún beato:<br /><br /><img alt="pop_linux_cara" class="aligncenter size-medium wp-image-99" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_cara.jpg?w=300" height="94" title="pop_linux_cara" width="300" /> <img alt="pop_linux_paisaje" class="aligncenter size-medium wp-image-100" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_paisaje.jpg?w=300" height="250" title="pop_linux_paisaje" width="300" /><br /><br />Bueno, os dejo que tengo un mago que se no sube de nivel solito. Que vuestros días sean largos, y escasos los contratiempos ;)</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Jan</abbr> 14
+          <sup></sup> <abbr>09</abbr>
+          <sub>03:31</sub>
+        </div>
+
+      <a href="/blog/2009/01/14/nokia-anade-la-licencia-lgpl-qt/">
+      Nokia Añade La Licencia LGPL a QT</a></h1>
+    
+        
+            <a class="comments" href="/blog/2009/01/14/nokia-anade-la-licencia-lgpl-qt/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2009/01/14/nokia-anade-la-licencia-lgpl-qt/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div align="justify"> Si bien hasta hoy se podía elegir entre la licencia GPL y no pagar por el kit de desarrollo de QT, o su versión comercial y así mantener como cerrado el código generado, Nokia ha añadido el tipo de licencia LGPL tanto a la interfaz de usuario como al kit de desarrollo a partir de la versión 4.5 .<br/><br/>Traduciendo del enlace original (<a href="http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt">http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt</a>), <em>El paso a la licencia LGPL proveerá a los desarrolladores de código fuente tanto libre como comercial una licencia más permisiva que la GPL y, por tanto, aumentar la flexibilidad. Además, los repositorios del código de QT estarán públicamente disponibles y alentará las contribuciones de las comunidades de desarrolladores de escritorio y aplicaciones embebidas. Con estos cambios, los programadores podrán guiar de manera activa la evolución del framework de QT.</em><br/><br/>Las versiones anteriores no ven modificada su licencia GPL.<br/><br/>Mientras escribo este post, veo que en Barrapunto se han hecho eco de la noticia: <a href="http://softlibre.barrapunto.com/article.pl?sid=09/01/14/0849214&amp;from=rss">http://softlibre.barrapunto.com/article.pl?sid=09/01/14/0849214&amp;from=rss</a><br/><br/>Veremos si este cambio de licencia hace que los desarrolladores eligen QT para sus aplicaciones en multiplataforma. Personalmente, todo cambio que dé libertad al programador para desarrollar (y distribuir) un producto, es bienvenido.<br/></div></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Nov</abbr> 14
+          <sup></sup> <abbr>08</abbr>
+          <sub>07:52</sub>
+        </div>
+
+      <a href="/blog/2008/11/14/avidemux/">
+      Avidemux "a-la-QT"</a></h1>
+    
+        
+            <a class="comments" href="/blog/2008/11/14/avidemux/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2008/11/14/avidemux/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Avidemux es un editor de videos muy similar en características al VirtualDub de otras plataformas. Ya conocía de la existencia de elección entre librería GTK y QT fuera de Linux para este programa, pero gracias al blog <a href="http://ubuntulife.wordpress.com/2008/11/14/avidemux-qt-editor-de-videos/" target="_blank">Ubuntu Life</a> (tardais en ir a visitarlo), veo que también existe para la plataforma del pingüino.<br/><br/>Para tenerlo disponible en Debian (por problemas de licencia, supongo), es necesario tener disponible el repositorio debian-multimedia de Marillat, así que aseguraos de <a href="http://debian-multimedia.org/" target="_blank">visitar su web</a> para comprobar que teneis en vuestro sources.list el repositorio antes de intentar instalarlo:<br/><br/><code>apt-get install avidemux-qt</code></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Nov</abbr> 7
+          <sup></sup> <abbr>08</abbr>
+          <sub>14:17</sub>
+        </div>
+
+      <a href="/blog/2008/11/07/estado-actual-de-k3b/">
+      Estado Actual De K3b</a></h1>
+    
+        
+            <a class="comments" href="/blog/2008/11/07/estado-actual-de-k3b/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2008/11/07/estado-actual-de-k3b/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">He conseguido compilar k3b desde su svn y realizado algunas capturas para que veais cómo va el proyecto. Pensad que k3b "sufre" un cambio muy radical en su transición a KDE4 por la implementación de phonon (para lo relacionado con el audio) y solid (hardware), y que son sólo 2 programadores.<br/><br/>Desde aquí mucho ánimo, que la cosa va bastante bien:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg"><img class="aligncenter size-medium wp-image-76" title="k3b_001" src="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg?w=300" alt="k3b_001" width="300" height="265" /></a><br/><p style="text-align:center;"><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg"><img class="aligncenter size-medium wp-image-82" title="k3b_0022" src="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg?w=300" alt="k3b_0022" width="300" height="259" /></a></p><br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg"><img class="aligncenter size-medium wp-image-79" title="k3b_0031" src="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg?w=300" alt="k3b_0031" width="300" height="279" /></a><br/><br/>Como veis, es "sólo" la adaptación de k3b al entorno KDE4. Pero qué quereis que os diga, a mí ya me gustaba tal y como era en KDE3, con lo que contento y feliz de que siga por el mismo camino.</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page_path}}">&larr; Older</a>
-    {% endif %}
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
+    
     <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page %}
-    <a class="next" href="{{paginator.previous_page_path}}">Newer &rarr;</a>
-    {% endif %}
+    
   </div>
 </div>
 <aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-    {% include_array blog_index_asides %}
-  {% else %}
-    {% include_array default_asides %}
-  {% endif %}
+  
+    <section id="cloud_tag">
+<h1>Nube de Tags</h1>
+
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/automatizacion">automatización</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:15px;">
+		<a href="/blog/categories/debian">debian</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/edicion">edición</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/escritorio">escritorio</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/grabacion">grabación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/k3b">k3b</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/kde">kde</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/kde 4.2">kde 4.2</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/linux">linux</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/password">password</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/postgresql">postgresql</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/programacion">programación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/python">python</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/qt">qt</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/testing">testing</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/trolltech">trolltech</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/trucos">trucos</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/video">video</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/videojuegos">videojuegos</a>
+	</span>
+
+</section><section>
+  <h1>Art&iacute;culos Recientes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 "Lenny" Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>En GitHub</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
 </aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyleft 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devopsysadmin';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+<script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>

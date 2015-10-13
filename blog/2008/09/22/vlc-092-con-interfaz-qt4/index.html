@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>VLC 0.9.2, Con Interfaz QT4 - /sys/admin</title>
+  <meta name="author" content="David PG">
+
+  
+  <meta name="description" content="A estas alturas no es noticia que el reproductor multimedia VLC tiene nueva versión, la 0.9.2, y tampoco lo es que su juego de botones y ventanas ha &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2008/09/22/vlc-092-con-interfaz-qt4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-68777841-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">/sys/admin</a></h1>
+  
+    <h2>Blog de/para sysadmins, devops y fans de GNU/Linux</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="devopsysadmin.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Buscar"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archivo</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Sep</abbr> 22
+          <sup></sup> <abbr>08</abbr>
+          <sub>14:01</sub>
+        </div>
+        <span style="margin-top: -5px">
+      VLC 0.9.2, Con Interfaz QT4
+      </span></h1>
+    
+        
+            <a class="comments" href="#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">A estas alturas no es noticia que el reproductor multimedia <a title="VLC" href="http://www.videolan.org" target="_blank">VLC</a> tiene nueva versión, la 0.9.2, y tampoco lo es que su juego de botones y ventanas ha cambiado del wxWindows a QT4. El objetivo de este artículo, no obstante, es el de integrar una aplicación tan útil en el escritorio KDE.<br/><br/>Para empezar, y a sabiendas de que yo uso Debian <em>Testing </em>(sí, <em>testing</em>, y no <em>lenny</em>. Ahora mismo es la misma distribución, pero la <em>testing</em> es cambiante con el tiempo y <em>lenny</em>, cuando pase a estable, tendrá únicamente corrección de fallos de seguridad), comento que habrá que hacer un uso temporal de los repositorios de Ubuntu, puesto que es en la única distro "Debian-like" que he encontrado paquete.<br/><br/>Ahora, no enmarranemos el sources.list quitando y poniendo lineas de otras distribuciones. Crearemos un nuevo list dentro de <em>/etc/apt/sources.list.d</em> (fijaos que la almohadilla significa con permisos de root, ya sea con "<em>su</em>" o con "<em>sudo</em>", y que no hay salto de línea):<br/><code># echo "deb http://es.archive.ubuntu.com/ubuntu hardy main contrib universe multiverse" &gt; /etc/apt/sources.list.d/ubuntu.list<br/># echo "deb http://ppa.launchpad.net/c-korn/ubuntu hardy main" &gt;&gt; /etc/apt/sources.list.d/ubuntu.list<br/># apt-get update ; apt-get -y --purge remove vlc-* ; apt-get install -y --force-yes vlc<br/># mv /etc/apt/sources.list.d/ubuntu.list /etc/apt/sources.list.d/ubuntu.list.bak<br/># apt-get update</code><br/>Este método lo aplicaremos hasta que la versión 0.9.2 (o superior) no esté, como mínimo, en <em>unstable</em>.<br/><br/>Vale, ya lo tenemos instalado, dependencias satisfechas, limpito otra vez el sources.list ... Ahora vamos a darle un aspecto "más KDE". Entrad en Herramientas -&gt; Preferencias. Tendreis la primera pantalla, seleccionamos "todo" (abajo recuadrado en rojo):<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-002.jpg"><img class="aligncenter size-thumbnail wp-image-52" title="snap-002" src="http://davidpx.files.wordpress.com/2008/09/snap-002.jpg?w=115" alt="" width="115" height="96" /></a><br/><br/>Una vez dentro, en el árbol de la izquierda (esto ya os parecerá más al menú clásico del VLC), seleccionamos Interfaz -&gt; Interfaces principales -&gt; Qt, y desmarcad la opción que os pongo en rojo:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-003.jpg"><img class="aligncenter size-thumbnail wp-image-57" title="snap-003" src="http://davidpx.files.wordpress.com/2008/09/snap-003.jpg?w=115" alt="" width="115" height="96" /></a><br/><br/>Personalmente también le he quitado el icono de la bandeja de entrada, pero eso ya va más al gusto de cada uno.<br/><br/>Y para que veais cómo queda de integrado, sin pieles (skins) ni nada, una captura de mi escritorio:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/09/snap-001.jpg"><img class="aligncenter size-thumbnail wp-image-56" title="snap-001" src="http://davidpx.files.wordpress.com/2008/09/snap-001.jpg?w=120" alt="" width="120" height="96" /></a></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard"><span class="fn"></span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2008-09-22T14:01:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2008</span></span> <span class='time'>2:01 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/debian/'>debian</a>, <a class='category' href='/blog/categories/escritorio/'>escritorio</a>, <a class='category' href='/blog/categories/kde/'>kde</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+<table>
+<tr><td>
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2008/09/22/vlc-092-con-interfaz-qt4/" data-via="david_3pwood" data-count="vertical" data-counturl="http://devopsysadmin.github.io/blog/2008/09/22/vlc-092-con-interfaz-qt4/" >Tweet</a>
+  
+</td><td>
+  
+  <div class="g-plusone" data-size="tall"></div>
+  
+</td><td>
+  
+    <div class="linkedin-share" data-send="true" data-width="450" data-show-faces="false">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: es_ES</script>
+      <script type="IN/Share" data-url="http://devopsysadmin.github.io/blog/2008/09/22/vlc-092-con-interfaz-qt4/" data-counter="top"></script>
+    </div>
+  
+</td><td>
+  
+    <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  
+
+</td></tr>
+</table>
+</div>
+<div style="height: 10px;"> </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/09/10/vuelta-debian/" title="Previous Post: Vuelta a Debian">&laquo; Vuelta a Debian</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/09/24/virtualbox-20-tambien-es-qt4/" title="Next Post: Virtualbox 2.0 también es QT4">Virtualbox 2.0 también es QT4 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section id="cloud_tag">
+<h1>Nube de Tags</h1>
+
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/automatizacion">automatización</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:15px;">
+		<a href="/blog/categories/debian">debian</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/edicion">edición</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/escritorio">escritorio</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/grabacion">grabación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/k3b">k3b</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/kde">kde</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/kde 4.2">kde 4.2</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:16px;">
+		<a href="/blog/categories/linux">linux</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/password">password</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/postgresql">postgresql</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/programacion">programación</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/python">python</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:13px;">
+		<a href="/blog/categories/qt">qt</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/testing">testing</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/trolltech">trolltech</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:12px;">
+		<a href="/blog/categories/trucos">trucos</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/video">video</a>
+	</span>
+
+	
+	
+	<span class="tag" style="font-size:11px;">
+		<a href="/blog/categories/videojuegos">videojuegos</a>
+	</span>
+
+</section><section>
+  <h1>Art&iacute;culos Recientes</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/19/sendlines-un-expect-simplificado/">Sendlines, Un Expect Simplificado</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/">Hacer Un Pg_dump Aprovechando Los Cores De La Máquina</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 "Lenny" Lanzado</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>En GitHub</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/devopsysadmin">@devopsysadmin</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'devopsysadmin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/david.3pwood?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyleft 2015 - David PG -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'devopsysadmin';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+<script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+</script>
+
+
+
+
+
+</body>
+</html>

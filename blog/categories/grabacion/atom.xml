@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Grabación | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/grabacion/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-10-13T12:41:00+02:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Estado Actual De K3b]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/11/07/estado-actual-de-k3b/"/>
+    <updated>2008-11-07T14:17:00-08:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/11/07/estado-actual-de-k3b</id>
+    <content type="html"><![CDATA[<p>He conseguido compilar k3b desde su svn y realizado algunas capturas para que veais cómo va el proyecto. Pensad que k3b &ldquo;sufre&rdquo; un cambio muy radical en su transición a KDE4 por la implementación de phonon (para lo relacionado con el audio) y solid (hardware), y que son sólo 2 programadores.<br/><br/>Desde aquí mucho ánimo, que la cosa va bastante bien:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg"><img class="aligncenter size-medium wp-image-76" title="k3b_001" src="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg?w=300" alt="k3b_001" width="300" height="265" /></a><br/><p style="text-align:center;"><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg"><img class="aligncenter size-medium wp-image-82" title="k3b_0022" src="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg?w=300" alt="k3b_0022" width="300" height="259" /></a></p><br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg"><img class="aligncenter size-medium wp-image-79" title="k3b_0031" src="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg?w=300" alt="k3b_0031" width="300" height="279" /></a><br/><br/>Como veis, es &ldquo;sólo&rdquo; la adaptación de k3b al entorno KDE4. Pero qué quereis que os diga, a mí ya me gustaba tal y como era en KDE3, con lo que contento y feliz de que siga por el mismo camino.</p>
+]]></content>
+  </entry>
+  
+</feed>

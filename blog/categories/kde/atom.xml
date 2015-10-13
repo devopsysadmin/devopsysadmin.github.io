@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Kde | /sys/admin]]></title>
+  <link href="http://devopsysadmin.github.io/blog/categories/kde/atom.xml" rel="self"/>
+  <link href="http://devopsysadmin.github.io/"/>
+  <updated>2015-10-13T12:41:00+02:00</updated>
+  <id>http://devopsysadmin.github.io/</id>
+  <author>
+    <name><![CDATA[David PG]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Estado Actual De K3b]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/11/07/estado-actual-de-k3b/"/>
+    <updated>2008-11-07T14:17:00-08:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/11/07/estado-actual-de-k3b</id>
+    <content type="html"><![CDATA[<p>He conseguido compilar k3b desde su svn y realizado algunas capturas para que veais cómo va el proyecto. Pensad que k3b &ldquo;sufre&rdquo; un cambio muy radical en su transición a KDE4 por la implementación de phonon (para lo relacionado con el audio) y solid (hardware), y que son sólo 2 programadores.<br/><br/>Desde aquí mucho ánimo, que la cosa va bastante bien:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg"><img class="aligncenter size-medium wp-image-76" title="k3b_001" src="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg?w=300" alt="k3b_001" width="300" height="265" /></a><br/><p style="text-align:center;"><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg"><img class="aligncenter size-medium wp-image-82" title="k3b_0022" src="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg?w=300" alt="k3b_0022" width="300" height="259" /></a></p><br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg"><img class="aligncenter size-medium wp-image-79" title="k3b_0031" src="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg?w=300" alt="k3b_0031" width="300" height="279" /></a><br/><br/>Como veis, es &ldquo;sólo&rdquo; la adaptación de k3b al entorno KDE4. Pero qué quereis que os diga, a mí ya me gustaba tal y como era en KDE3, con lo que contento y feliz de que siga por el mismo camino.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Objetivos Y Mejoras De KDE 4.2]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/11/07/objetivos-y-mejoras-de-kde-42/"/>
+    <updated>2008-11-07T11:20:00-08:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/11/07/objetivos-y-mejoras-de-kde-42</id>
+    <content type="html"><![CDATA[<p>Puesto que hace mucho que no escribo en este blog (y eso que sabía el compromiso que tengo al separar mi antiguo blog en 2 para no mezclar vida privada y labor informática), me he puesto a mirar la página de techbase de KDE, donde figuran los planes y objetivos con cada versión grande.<br/><br/>Para la versión entrante, la 4.2, que saldrá a finales de Enero, tienen marcados los siguientes objetivos:<br/><ul><br/>  <li>módulos KDevelop y KDevplatform</li><br/>  <li>Marco de desarrollo en Decibel para VoIP y comunicación en tiempo real</li><br/>   <li><a href="http://techbase.kde.org/Projects/Plasma/Package" target="_blank">Paquetes &ldquo;Plasmagik&rdquo;</a> (de instalar por click) para plasma y un creador de add-ons</li><br/>    <li>Un Kopete más pulido</li><br/> <li>Agregar <a href="http://kblogger.pwsp.net/" target="_blank">KBlogger</a> a KDE-PIM</li><br/>    <li>Eigen 2 (librería de cálculo aritmético lineal) en kdesupport, usado en edu/office/games</li><br/>   <li>Edición modal (a lo &ldquo;VI&rdquo;) en Kate/KDevelop</li><br/>   <li>Ark (gestor de archivos comprimidos) muy mejorado</li><br/> <li>Montones de pequeñas características</li><br/></ul><br/>De las pequeñas características, sacado del <a href="http://techbase.kde.org/Schedules/KDE4/4.2_Feature_Plan" target="_blank">feature plan</a>, destaco las siguientes:<br/><ul><br/>   <li>&ldquo;Modo administrador&rdquo; en SystemSettings</li><br/>    <li>Un administrador de impresión, sustituto del extinto KDEPrint, llamado system-config-printer-kde</li><br/> <li>Integración con QtScript</li><br/> <li>Importar esquemas de colores de KDE3</li><br/>  <li>aprendizaje básico de krunner</li><br/>    <li>arrastre de iconos del panel al escritorio</li><br/>    <li>soporte python en plasma</li><br/>  <li>agrupación de iconos en la barra de tareas</li><br/>   <li>plasmoides en el protector de pantalla</li><br/>    <li>auto-ocultar panel</li><br/>    <li>soporte para Google Gadgets</li><br/>   <li>decoración de sombras de la ventana</li><br/>  <li>ajuste personalizado de la velocidad de los efectos</li><br/>   <li>efectos de cubo y magic lamp, conocidos de compiz</li><br/> <li>plasmoide de contactos basado en los encontrados en kopete</li><br/>    <li>kget soporta torrents, ahora soportará el protocolo ed2k (edonkey/emule) gracias a mldonkey</li><br/>  <li>applet para gestionar la red</li><br/>  <li>Dragon Player, independiente de xine</li><br/>  <li>anotaciones sonoras y de enlaces en okular</li><br/>    <li>reducción de ojos rojos en Gwenview</li><br/>  <li>backend de okular para faxes</li><br/>  <li>página inicial de konqueror cambiada, mostrando los marcadores del usuario</li><br/>   <li>zoom para imágenes en dolphin</li><br/></ul><br/>Visto lo visto, no son pocas las novedades que nos esperan, algunas con más impaciencia que otras. Todo aquello que no se pueda implementar para la versión 4.2 (aunque la mayoría de lo que os he puesto es trabajo ya terminado o en progreso), saldrá para la 4.3, prevista para el 30 de junio de 2009, y cuyo plan de características aún no ha sido concretado.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[QT Creator, ¿un Posible RAD Para QT/KDE?]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/10/31/qt-creator-un-posible-rad-para-qtkde/"/>
+    <updated>2008-10-31T08:46:00-07:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/10/31/qt-creator-un-posible-rad-para-qtkde</id>
+    <content type="html"><![CDATA[<p>Los que nos dedicamos a la programación, ya sea como hobby (mi caso) o como parte del trabajo diario, tenemos que agradecer a Trolltech, la creadora de las bibliotecas QT, el nacimiento de esta nueva herramienta: QT Creator.<br/><br/>QT Creator se presenta como un IDE (Integrated Development Enviroment) ligero y multiplataforma diseñado para hacer más simple la tarea de crear aplicaciones basadas en QT4. Dispone de un asistente (wizard), ayuda rápida, autorelleno de sintaxis y compilador integrado en su versión para Windows (en Linux dispondríamos de los paquetes que vienen en nuestra distribución, con lo que no es problema ninguno).<br/><br/>Aquí os pongo un vídeo demostrativo (el mismo que aparece en la página de trolltech):<br/><p style="text-align:center;"><object height="350" width="425"><br/>      <param name="movie" value="http://www.youtube.com/v/U7yje3D1UM4"><br/>      <param name="wmode" value="transparent"><br/>      <embed src="http://www.youtube.com/v/U7yje3D1UM4;rel=0" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"><br/>      </object></p><br/><br/>Yo lo he estado probando y me ha gustado bastante, acostumbrado que estoy a la interfaz de Delphi. Me falta, sin embargo, una gestión un poco mejor de las señales/slots, pero hay que darle tiempo al tiempo, puesto que la versión final saldrá a primeros del año que viene.<br/><br/>Noticia vista en barrapunto: <a href="http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml" target="_blank"><a href="http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml">http://softlibre.barrapunto.com/softlibre/08/10/31/0127204.shtml</a><br/></a>Enlace a QT Creator, en la página de Trolltech: <a href="http://trolltech.com/developer/qt-creator" target="_blank"><a href="http://trolltech.com/developer/qt-creator">http://trolltech.com/developer/qt-creator</a></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE 4.2 "Arreglará" Los Mensajes Emergentes]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/10/22/kde-42-los-mensajes-emergentes/"/>
+    <updated>2008-10-22T02:17:00-07:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/10/22/kde-42-los-mensajes-emergentes</id>
+    <content type="html"><![CDATA[<p>KDE 4.2 tiene pensado salir como estable para finales de enero de 2009 (concretamente, el 27, según su <a href="http://techbase.kde.org/Schedules/KDE4/4.2_Release_Schedule" target="_blank">planning</a>), y poco a poco se va viendo lo que nos traerá esta nueva versión.<br/><br/>Uno de los detalles destacables es el &ldquo;arreglo&rdquo; de los mensajes emergentes. Para explicar un poco mejor, tomemos como ejemplo a kopete, el cliente de mensajería: cuando un usuario entra, el mensaje emergente aparece arriba, a la derecha de la pantalla. Lo mismo si nos abre una conversación y nos da a elegir si queremos abrir una ventana o ignorar el mensaje. Todo arriba a la derecha.<br/><br/>Ahora, el sistema de mensajes emergentes pertenece al plasmoide &ldquo;systray&rdquo;, de manera que aparece donde tiene que aparecer:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/10/plasma_notifications.png"><img class="aligncenter size-full wp-image-66" title="plasma_notifications" src="http://davidpx.files.wordpress.com/2008/10/plasma_notifications.png" alt="" width="303" height="136" /></a><br/><br/>Pero no sólo se queda en kopete, sino que va almacenando los mensajes emergentes para que vayan saliendo de manera organizada uno encima de otro. Además, se ha &ldquo;plasmizado&rdquo; para que tenga un aspecto visual más acorde al tema elegido.<br/><br/>Esta nueva mejora del systray no es la única: vuelve la ocultación de iconos y la inclusión de plasmoides dentro de la bandeja.<br/><br/>KDE 4.2 quizá sea lo que debió nacer como KDE 4.0 (por lo menos, para aquéllos que no entienden el lío de &ldquo;KDE4 no es KDE 4.0&rdquo; y cosas así), pero no podemos negar que está haciéndose un trabajo increíble para darnos una experiencia de escritorio cómoda y funcional.<br/><br/>Vía: <a href="http://aseigo.blogspot.com/2008/10/plasma-is-now-feature-complete.html" target="_blank"><a href="http://aseigo.blogspot.com/2008/10/plasma-is-now-feature-complete.html">http://aseigo.blogspot.com/2008/10/plasma-is-now-feature-complete.html</a></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Virtualbox 2.0 También Es QT4]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2008/09/24/virtualbox-20-tambien-es-qt4/"/>
+    <updated>2008-09-24T13:52:00-07:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2008/09/24/virtualbox-20-tambien-es-qt4</id>
+    <content type="html"><![CDATA[<p>Si no nos bastaba con que la gente del <a href="http://www.videolan.org" target="_blank">VLC</a> nos diera la sorpresa de pasar sus widgets a QT4, resulta que <a href="http://www.virtualbox.org" target="_blank">VirtualBox</a>, el virtualizador de sistemas operativos, también se pasa a estas librerías para mostrarnos su intefaz.<br/><br/>Aunque la configuración de la red más allá de virtualizar un sistema operativo resulta algo engorrosa, este programa hace auténticas virguerías en conseguir una virtualización casi perfecta (hay muchos artículos que explican cómo ejecutar una aplicación windows en un escritorio linux a través de VirtualBox y RDP) y es altamente recomendable para los que les guste probar distribuciones de linux, o experimentar con SSOO limpios o arreglados según la necesidad.<br/><br/>Puesto que la noticia la he leído en KDE-Hispano y a ellos pertenecen las capturas que he visto, os dejo el enlace para que le echeis un ojo: <a title="http://www.kdehispano.es/?q=content/lanzado-virtualbox-20" href="http://www.kdehispano.es/?q=content/lanzado-virtualbox-20" target="_blank"><a href="http://www.kdehispano.es/?q=content/lanzado-virtualbox-20">http://www.kdehispano.es/?q=content/lanzado-virtualbox-20</a></a></p>
+]]></content>
+  </entry>
+  
+</feed>
