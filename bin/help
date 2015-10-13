@@ -3,5 +3,6 @@ cat << .
 
 USAGE:
     - create new post: rake new_post['post title']
-
+    - launch instance to supervise changes: rake watch
+    - deploy contents: bin/deploy
 .

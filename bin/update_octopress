@@ -1,6 +1,11 @@
 #!/bin/sh
+if [ `basename $PWD` = bin ]; then
+	cd ..
+fi
+
 git clone https://github.com/imathis/octopress.git octopress
 rsync -aS --delete-before octopress/plugins/ plugins/
 rm -fR octopress/.git* octopress/_config.yml octopress/*.markdown
 rsync -aS octopress/ $PWD/
 rm -fR octopress
+bundle install
