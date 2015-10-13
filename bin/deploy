@@ -2,8 +2,16 @@
 if [ `basename $PWD` = bin ]; then
     cd ..
 fi
+DATE=`date`
 
 git add -A .
-git commit -m "`date`"
+git commit
 git push origin source
-bundle exec rake deploy
+
+rake generate
+rsync --delete-before -aS source/ ../master/
+
+cd ../master/
+git add -A .
+git commit -m "$DATE"
+git push origin master
