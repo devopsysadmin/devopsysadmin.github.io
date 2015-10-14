@@ -9,7 +9,7 @@
   <meta name="author" content="David PG">
 
   
-  <meta name="description" content="En muchas ocasiones, cuando tenemos que crear un servicio que pide usuario/password, tendemos al uso de passwords simples o poco elaboradas. Tanto si &hellip;">
+  <meta name="description" content="Recently I&rsquo;ve changed my laptop main distro from Debian to Manjaro (an Arch-based distribution). Does it mean that the Carmina Burana&rsquo;s & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,82 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Oct</abbr> 13
+          <sup></sup> <abbr>15</abbr>
+          <sub>20:40</sub>
+        </div>
+
+      <a href="/blog/2015/10/13/from-debian-to-arch-not-as-difficult/">
+      From Debian to Arch: Not as Difficult, Nor Simple Either</a></h1>
+    
+        
+            <a class="comments" href="/blog/2015/10/13/from-debian-to-arch-not-as-difficult/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently I&rsquo;ve changed my laptop main distro from Debian to Manjaro (an Arch-based distribution). Does it mean that the Carmina Burana&rsquo;s &ldquo;Oh Fortuna&rdquo; plays while apt-get falls into the depths of Oblivion? Well, technically yes. I mean, I can listen &ldquo;Oh Fortuna&rdquo; or any other piece of music while any linux distribution is being installed. And trully, pacman is NOT apt tools (It doesn&rsquo;t mean better or worse, just means they are different). But in the meantime I get used to this new approach and enjoy the views of KDE Plasma 5, I needed some help to the transition.</p>
+
+<p>That&rsquo;s why I made some small utilities. And uploaded them to my Github. Until the time, there are only two small scripts (one made with python, the another with bash) who simplifies the mental transition between distros.</p>
+
+<p>The first one, <strong>service</strong>, is just a simple translation to systemctl (I know, it&rsquo;s not only related to Arch but any systemd distro. But I haven&rsquo;t changed yet completely my way for calling start|stop|restart services). <strong>Apt.py</strong>, as its name suggests, is an apt-to-pacman translation with many, MANY lacks of functionality, but still usable on daily work.</p>
+
+<p>I will explain with an example: I haven&rsquo;t uploaded the system for a while right now, so I want to perform &lsquo;apt-get update&rsquo; to receive the new packages list and &lsquo;apt-get upgrade&rsquo; to upgrade them. Well, with apt.py (installed by setup.sh), I can handle it easily:</p>
+
+<p><code>~$ sudo apt-get update</code></p>
+
+<pre>
+pacman -Sy
+core is updated
+extra is updated
+community is updated
+multilib is updated
+</pre>
+
+
+<p>Or force the package update, even if it says the zips are updated:</p>
+
+<p><code> sudo apt-get update &ndash;force </code></p>
+
+<pre>
+pacman -Syy
+:: Sincronizando las bases de datos de los paquetes...
+ core                          134,6 KiB   302K/s 00:00 [############################] 100%
+ extra                        1937,6 KiB   451K/s 00:04 [############################] 100%
+ community                       3,1 MiB   263K/s 00:12 [############################] 100%
+ multilib                      171,7 KiB   695K/s 00:00 [############################] 100%
+</pre>
+
+
+<p>Note the <code>pacman -Sy</code> the program prints. It&rsquo;s because my translator doesn&rsquo;t want to be a substitute of pacman, but a simpler way to understand it through the apt approaching.</p>
+
+<p>Hope it helps. Suggestions, as always, are welcome :D</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -547,46 +623,6 @@ donde:<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-
-    
-      <h1 class="entry-title">
-        <div class="date">
-          <abbr>Nov</abbr> 7
-          <sup></sup> <abbr>08</abbr>
-          <sub>14:17</sub>
-        </div>
-
-      <a href="/blog/2008/11/07/estado-actual-de-k3b/">
-      Estado Actual De K3b</a></h1>
-    
-        
-            <a class="comments" href="/blog/2008/11/07/estado-actual-de-k3b/#disqus_thread"
-             data-disqus-identifier="http://devopsysadmin.github.io/blog/2008/11/07/estado-actual-de-k3b/">Comments</a>
-        
-    
-      <p class="meta">
-        
-
-
-
-
-
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">He conseguido compilar k3b desde su svn y realizado algunas capturas para que veais cómo va el proyecto. Pensad que k3b "sufre" un cambio muy radical en su transición a KDE4 por la implementación de phonon (para lo relacionado con el audio) y solid (hardware), y que son sólo 2 programadores.<br/><br/>Desde aquí mucho ánimo, que la cosa va bastante bien:<br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg"><img class="aligncenter size-medium wp-image-76" title="k3b_001" src="http://davidpx.files.wordpress.com/2008/11/k3b_001.jpeg?w=300" alt="k3b_001" width="300" height="265" /></a><br/><p style="text-align:center;"><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg"><img class="aligncenter size-medium wp-image-82" title="k3b_0022" src="http://davidpx.files.wordpress.com/2008/11/k3b_0022.jpeg?w=300" alt="k3b_0022" width="300" height="259" /></a></p><br/><br/><a href="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg"><img class="aligncenter size-medium wp-image-79" title="k3b_0031" src="http://davidpx.files.wordpress.com/2008/11/k3b_0031.jpeg?w=300" alt="k3b_0031" width="300" height="279" /></a><br/><br/>Como veis, es "sólo" la adaptación de k3b al entorno KDE4. Pero qué quereis que os diga, a mí ya me gustaba tal y como era en KDE3, con lo que contento y feliz de que siga por el mismo camino.</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -720,6 +756,10 @@ donde:<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/10/13/from-debian-to-arch-not-as-difficult/">From Debian to Arch: Not as Difficult, Nor Simple Either</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
       </li>
     
@@ -733,10 +773,6 @@ donde:<br />
     
       <li class="post">
         <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 "Lenny" Lanzado</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="David PG">
 
   
-  <meta name="description" content="XGL ha supuesto una revolución en el modo de tratar los gráficos (animados o no) en el mundo Linux. A pesar de que en todo momento Novell dio la &hellip;">
+  <meta name="description" content="El mezclote SATA-IDE en mi ordenador me está trayendo de cabeza: cuando tengo que hacer un reinicio (normal en un sistema linux/xp), me toca apagar &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,46 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+
+    
+      <h1 class="entry-title">
+        <div class="date">
+          <abbr>Oct</abbr> 19
+          <sup></sup> <abbr>05</abbr>
+          <sub>04:13</sub>
+        </div>
+
+      <a href="/blog/2005/10/19/de-primeras-con-edgy/">
+      De Primeras Con Edgy</a></h1>
+    
+        
+            <a class="comments" href="/blog/2005/10/19/de-primeras-con-edgy/#disqus_thread"
+             data-disqus-identifier="http://devopsysadmin.github.io/blog/2005/10/19/de-primeras-con-edgy/">Comments</a>
+        
+    
+      <p class="meta">
+        
+
+
+
+
+
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="content">El mezclote SATA-IDE en mi ordenador me está trayendo de cabeza: cuando tengo que hacer un reinicio (normal en un sistema linux/xp), me toca apagar el equipo, DESENCHUFARLO y esperar de 10 a 15 min a que libere los condensadores. ¿Por qué? Porque si no, el disco IDE no se enciende. Y puesto que dapper no permite inicio en discos SATA con GRUB, tenía que dejarlo ahí. Vale, pues el disco IDE, que tan por saco me ha dado, acaba de ser eliminado de mi torre. Tenía ya una partición hecha y pensada para NTFS y el futuro Windows Vista, así que le daré uso. Instalar el XP me trae recuerdos... ains... xD Instalar edgy con el CD alternate es más cómodo que antes. Aunque se creyera que mi teclado era francés, no hubo problema para corregirle del error. Particionado: ¡Primer fallo! No me deja formatear en XFS, pero sí en Reiser y ext3. Este último siempre me ha fallado por inconsistencia, y aunque tenga los datos en ese sistema de archivos (gracias a IFS for Windows puedo usar la partición), el sistema estará en Reiser (qué remedio). Instalación: pues como siempre, aunque podría decir que hasta ha sido más lenta que de costumbre. Ahora sería cosa de probar la instalación desde LiveCD, a ver qué tan rápido arranca (se supone que han mejorado la velocidad y tal). Arranque: bueno, me esperaba un arranque de grub bonito, pero no. Todo modo texto. Eso sí, rápido de cojones. En mucho menos que lo que dapper, ya tengo mi escritorio disponible para el uso cotidiano. Post-Instalación: en fin, qué voy a decir. Que no llueve a gusto de todos. Actualizar paquetes, instalar nvidia, controladores propietarios multimedia, kdeutils, kdemultimedia (me gusta usar la previsualización en konqueror). Vaporware: otra vez al chroot. Joer, y menos mal que decían que iban a jugar con esa característica. Pues ni simbiosis amd64/i386, ni pruebas con smart (administrador de paquetes y gestor de dependencias), ni xgl (beryl) instalado por defecto. Todo a golpe de apt-get, sí, pero incómodo. Fallos: coño! han arreglado el script de instalación de mldonkey-server... para que luego el Kmldonkey no conecte! xD En serio, creo que hay un problema de conexión o permisos con los puertos, porque el aMule no funciona tampoco en modo local (amule-utils) para pasarle los parámetros por consola. Por lo demás, pues bien. No va más rápido, pero tampoco va más lento. He actualizado paquetes y listos. Vamos, que si dapper me dejara instalar GRUB en mi disco SATA, podría haberme esperado perfectamente a la versión estable de edgy, o incluso a edgy+1 si ésta mejorara lo actual. Recomendación final: actualízate a edgy cuando sea estable... y le apliquen un parche xD</div></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -531,6 +571,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/10/13/from-debian-to-arch-not-as-difficult/">From Debian to Arch: Not as Difficult, Nor Simple Either</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/">Passwords Con Caracteres Aleatorios</a>
       </li>
     
@@ -544,10 +588,6 @@
     
       <li class="post">
         <a href="/blog/2015/02/17/recuperando-el-blog/">Recuperando El Blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2009/02/14/kde-50-lanzado/">Debian 5.0 "Lenny" Lanzado</a>
       </li>
     
   </ul>

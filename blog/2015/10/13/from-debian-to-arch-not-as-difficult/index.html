@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Edgy RC1 - /sys/admin</title>
+  <title>From Debian to Arch: Not as Difficult, Nor Simple Either - /sys/admin</title>
   <meta name="author" content="David PG">
 
   
-  <meta name="description" content="Bueeeeno, afortunadamente han arreglado cositas. Ya vuelvo a tener mldonkey (bieeeeen), y ya funciona el arranque gráfico (más "bieeeeen"). Parece &hellip;">
+  <meta name="description" content="Recently I&rsquo;ve changed my laptop main distro from Debian to Manjaro (an Arch-based distribution). Does it mean that the Carmina Burana&rsquo;s & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2005/10/22/edgy-rc1/">
+  <link rel="canonical" href="http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="/sys/admin" type="application/atom+xml">
@@ -83,12 +83,12 @@
     
       <h1 class="entry-title">
         <div class="date">
-          <abbr>Oct</abbr> 22
-          <sup></sup> <abbr>05</abbr>
-          <sub>04:13</sub>
+          <abbr>Oct</abbr> 13
+          <sup></sup> <abbr>15</abbr>
+          <sub>20:40</sub>
         </div>
         <span style="margin-top: -5px">
-      Edgy RC1
+      From Debian to Arch: Not as Difficult, Nor Simple Either
       </span></h1>
     
         
@@ -108,7 +108,43 @@
   </header>
 
 
-<div class="entry-content">Bueeeeno, afortunadamente han arreglado cositas. Ya vuelvo a tener mldonkey (bieeeeen), y ya funciona el arranque gráfico (más "bieeeeen"). Parece estable. Por lo menos tengo los paquetes actualizados (su dolor de cabeza costó) y ya no me tengo que preocupar hasta pasados 6 meses. Aunque bueno, ahora que el SATA es el único disco duro, me espero fijo-fijo a que Feisty Fawn sea estable. Espero... xD</div>
+<div class="entry-content"><p>Recently I&rsquo;ve changed my laptop main distro from Debian to Manjaro (an Arch-based distribution). Does it mean that the Carmina Burana&rsquo;s &ldquo;Oh Fortuna&rdquo; plays while apt-get falls into the depths of Oblivion? Well, technically yes. I mean, I can listen &ldquo;Oh Fortuna&rdquo; or any other piece of music while any linux distribution is being installed. And trully, pacman is NOT apt tools (It doesn&rsquo;t mean better or worse, just means they are different). But in the meantime I get used to this new approach and enjoy the views of KDE Plasma 5, I needed some help to the transition.</p>
+
+<p>That&rsquo;s why I made some small utilities. And uploaded them to my Github. Until the time, there are only two small scripts (one made with python, the another with bash) who simplifies the mental transition between distros.</p>
+
+<p>The first one, <strong>service</strong>, is just a simple translation to systemctl (I know, it&rsquo;s not only related to Arch but any systemd distro. But I haven&rsquo;t changed yet completely my way for calling start|stop|restart services). <strong>Apt.py</strong>, as its name suggests, is an apt-to-pacman translation with many, MANY lacks of functionality, but still usable on daily work.</p>
+
+<p>I will explain with an example: I haven&rsquo;t uploaded the system for a while right now, so I want to perform &lsquo;apt-get update&rsquo; to receive the new packages list and &lsquo;apt-get upgrade&rsquo; to upgrade them. Well, with apt.py (installed by setup.sh), I can handle it easily:</p>
+
+<p><code>~$ sudo apt-get update</code></p>
+
+<pre>
+pacman -Sy
+core is updated
+extra is updated
+community is updated
+multilib is updated
+</pre>
+
+
+<p>Or force the package update, even if it says the zips are updated:</p>
+
+<p><code> sudo apt-get update &ndash;force </code></p>
+
+<pre>
+pacman -Syy
+:: Sincronizando las bases de datos de los paquetes...
+ core                          134,6 KiB   302K/s 00:00 [############################] 100%
+ extra                        1937,6 KiB   451K/s 00:04 [############################] 100%
+ community                       3,1 MiB   263K/s 00:12 [############################] 100%
+ multilib                      171,7 KiB   695K/s 00:00 [############################] 100%
+</pre>
+
+
+<p>Note the <code>pacman -Sy</code> the program prints. It&rsquo;s because my translator doesn&rsquo;t want to be a substitute of pacman, but a simpler way to understand it through the apt approaching.</p>
+
+<p>Hope it helps. Suggestions, as always, are welcome :D</p>
+</div>
 
 
   <footer>
@@ -123,7 +159,7 @@
 
 
 
-<time class='entry-date' datetime='2005-10-22T04:13:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2005</span></span> <span class='time'>4:13 am</span></time>
+<time class='entry-date' datetime='2015-10-13T20:40:20+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:40 pm</span></time>
       
 
 
@@ -133,7 +169,7 @@
 <table>
 <tr><td>
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2005/10/22/edgy-rc1/" data-via="david_3pwood" data-count="vertical" data-counturl="http://devopsysadmin.github.io/blog/2005/10/22/edgy-rc1/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/" data-via="david_3pwood" data-count="vertical" data-counturl="http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/" >Tweet</a>
   
 </td><td>
   
@@ -143,7 +179,7 @@
   
     <div class="linkedin-share" data-send="true" data-width="450" data-show-faces="false">
       <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: es_ES</script>
-      <script type="IN/Share" data-url="http://devopsysadmin.github.io/blog/2005/10/22/edgy-rc1/" data-counter="top"></script>
+      <script type="IN/Share" data-url="http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/" data-counter="top"></script>
     </div>
   
 </td><td>
@@ -158,14 +194,18 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2005/10/19/de-primeras-con-edgy/" title="Previous Post: De primeras con edgy">&laquo; De primeras con edgy</a>
+        <a class="basic-alignment left" href="/blog/2015/02/23/passwords-con-caracteres-aleatorios/" title="Previous Post: Passwords con caracteres aleatorios">&laquo; Passwords con caracteres aleatorios</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2005/11/27/kubuntu-es-en-obras/" title="Next Post: Kubuntu-es en obras">Kubuntu-es en obras &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -376,7 +416,10 @@
       var disqus_shortname = 'devopsysadmin';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/';
+        var disqus_url = 'http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
