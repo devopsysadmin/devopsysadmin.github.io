@@ -8,7 +8,7 @@ git add -A .
 git commit
 git push origin source
 
-rake generate
+bundle exec rake generate
 rsync -as --exclude=.git --delete-before public/ ../master/
 
 cd ../master/
