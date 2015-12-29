@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | /sys/admin]]></title>
   <link href="http://devopsysadmin.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://devopsysadmin.github.io/"/>
-  <updated>2015-10-14T08:41:05+02:00</updated>
+  <updated>2015-12-29T11:34:22+01:00</updated>
   <id>http://devopsysadmin.github.io/</id>
   <author>
     <name><![CDATA[David PG]]></name>
@@ -14,9 +14,53 @@
 
   
   <entry>
+    <title type="html"><![CDATA[From Debian to Arch: Not as Difficult, Nor Simple Either]]></title>
+    <link href="http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult/"/>
+    <updated>2015-10-13T20:40:20+02:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2015/10/13/from-debian-to-arch-not-as-difficult</id>
+    <content type="html"><![CDATA[<p>Recently I&rsquo;ve changed my laptop main distro from Debian to Manjaro (an Arch-based distribution). Does it mean that the Carmina Burana&rsquo;s &ldquo;Oh Fortuna&rdquo; plays while apt-get falls into the depths of Oblivion? Well, technically yes. I mean, I can listen &ldquo;Oh Fortuna&rdquo; or any other piece of music while any linux distribution is being installed. And trully, pacman is NOT apt tools (It doesn&rsquo;t mean better or worse, just means they are different). But in the meantime I get used to this new approach and enjoy the views of KDE Plasma 5, I needed some help to the transition.</p>
+
+<p>That&rsquo;s why I made some small utilities. And uploaded them to my Github. Until the time, there are only two small scripts (one made with python, the another with bash) who simplifies the mental transition between distros.</p>
+
+<p>The first one, <strong>service</strong>, is just a simple translation to systemctl (I know, it&rsquo;s not only related to Arch but any systemd distro. But I haven&rsquo;t changed yet completely my way for calling start|stop|restart services). <strong>Apt.py</strong>, as its name suggests, is an apt-to-pacman translation with many, MANY lacks of functionality, but still usable on daily work.</p>
+
+<p>I will explain with an example: I haven&rsquo;t uploaded the system for a while right now, so I want to perform &lsquo;apt-get update&rsquo; to receive the new packages list and &lsquo;apt-get upgrade&rsquo; to upgrade them. Well, with apt.py (installed by setup.sh), I can handle it easily:</p>
+
+<p><code>~$ sudo apt-get update</code></p>
+
+<pre>
+pacman -Sy
+core is updated
+extra is updated
+community is updated
+multilib is updated
+</pre>
+
+
+<p>Or force the package update, even if it says the zips are updated:</p>
+
+<p><code> sudo apt-get update &ndash;force </code></p>
+
+<pre>
+pacman -Syy
+:: Sincronizando las bases de datos de los paquetes...
+ core                          134,6 KiB   302K/s 00:00 [############################] 100%
+ extra                        1937,6 KiB   451K/s 00:04 [############################] 100%
+ community                       3,1 MiB   263K/s 00:12 [############################] 100%
+ multilib                      171,7 KiB   695K/s 00:00 [############################] 100%
+</pre>
+
+
+<p>Note the <code>pacman -Sy</code> the program prints. It&rsquo;s because my translator doesn&rsquo;t want to be a substitute of pacman, but a simpler way to understand it through the apt approaching.</p>
+
+<p>Hope it helps. Suggestions, as always, are welcome :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Sendlines, Un Expect Simplificado]]></title>
     <link href="http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado/"/>
-    <updated>2015-02-19T08:17:00-08:00</updated>
+    <updated>2015-02-19T17:17:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado</id>
     <content type="html"><![CDATA[<p>Para automatizar tareas siempre había hecho uso de <a href="http://www.tcl.tk/man/expect5.31/autoexpect.1.html">autoexpect</a>, ya que, una vez realizado (y guardado) todo la primera vez, sólo había que hacer un par de apaños al script resultante. Sin embargo, hay veces que no necesitamos algo tan sofisticado o no queremos instalar tcl/tsh en la máquina.</p>
 
@@ -96,7 +140,7 @@ donde:<br />
   <entry>
     <title type="html"><![CDATA[Hacer Un Pg_dump Aprovechando Los Cores De La Máquina]]></title>
     <link href="http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/"/>
-    <updated>2015-02-17T07:06:00-08:00</updated>
+    <updated>2015-02-17T16:06:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los</id>
     <content type="html"><![CDATA[<p>Desde la versión 9.3, postgreSQL permite hacer dumps de la base de datos en forma paralela, aprovechando así el número de cores de la máquina.</p>
 
@@ -135,7 +179,7 @@ donde:<br />
   <entry>
     <title type="html"><![CDATA[Debian 5.0 "Lenny" Lanzado]]></title>
     <link href="http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado/"/>
-    <updated>2009-02-14T03:48:00-08:00</updated>
+    <updated>2009-02-14T12:48:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2009/02/14/kde-50-lanzado</id>
     <content type="html"><![CDATA[<p>Como ya anunciaran en su momento los chicos de Debian, Lenny ya ha pasado a ser la nueva versión estable de Debian, tras 22 meses de desarrollo desde la salida de Etch. Soporta 12 arquitecturas de procesador e incluye las versiones más estables (que no las últimas) de KDE, Gnome, Xfce y LXDE.<br/><br/>Esto hace que la nueva versión de <em>testing</em> sea Squeeze. Personalmente yo suelo llamarlas por el número, testing y unstable, pero para gustos los colores.<br/><br/>Anuncio de versión: <a target="_blank" href="http://lists.debian.org/debian-announce/2009/msg00002.html"><a href="http://lists.debian.org/debian-announce/2009/msg00002.html">http://lists.debian.org/debian-announce/2009/msg00002.html</a></a><br/><br/>Página oficial de Debian: <a target="_blank" href="http://www.debian.org"><a href="http://www.debian.org">http://www.debian.org</a></a><br/><br/>Y para los que usamos testing, otra buena noticia: se está incluyendo <em>poco a poco</em> la actualización de KDE a 4.2, ahora que la estable ha salido, a la versión unstable, que es el paso previo para testing/squeeze.<br/><br/>Feliz día de los enamorados (de Debian) :D</p>
 ]]></content>
@@ -143,19 +187,10 @@ donde:<br />
   
   <entry>
     <title type="html"><![CDATA[Repositorio Para Testing/amd64]]></title>
-    <link href="http://devopsysadmin.github.io/blog/2009/02/07/repositorio-para-testingamd64/"/>
-    <updated>2009-02-07T15:51:00-08:00</updated>
-    <id>http://devopsysadmin.github.io/blog/2009/02/07/repositorio-para-testingamd64</id>
+    <link href="http://devopsysadmin.github.io/blog/2009/02/08/repositorio-para-testingamd64/"/>
+    <updated>2009-02-08T00:51:00+01:00</updated>
+    <id>http://devopsysadmin.github.io/blog/2009/02/08/repositorio-para-testingamd64</id>
     <content type="html"><![CDATA[<p>He puesto en marcha un pequeño repositorio de paquetes para debian testing (actualmente lenny, en breve squeeze) para la arquitectura amd64.<br/><br/>Ahora mismo sólo está el vlc 0.9.8a, recompilado de los paquetes de ubuntu más un parche que arregla el problema del video integrado, y poca cosa más. Iré agregando según pase el tiempo y la necesidad :)<br/><br/>Los paquetes no van firmados (otra cosa a la que dedicarle tiempo). Os pongo la línea para sources.list:<br/><br/><code>deb <a href="http://davidp.dyndns.org:8080/debian">http://davidp.dyndns.org:8080/debian</a> debian main</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Crítica Humorística a Wine]]></title>
-    <link href="http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine/"/>
-    <updated>2009-01-14T06:30:00-08:00</updated>
-    <id>http://devopsysadmin.github.io/blog/2009/01/14/critica-humoristica-wine</id>
-    <content type="html"><![CDATA[<p>Wine se encuentra actualmente en su versión de desarrollo 1.1.12 . Desde que el proyecto viera la luz, muchos cambios han pasado por su código fuente, incluída la incorporación/implementación del código necesario para muchas de las funciones de DirectX (¡y van por la 10!), lo que es un logro digno de admiración.<br /><br />No obstante, y pretendiendo ser realistas, las implementaciones del código aún distan de ser suficientes para permitir cualquier juego. Si bien puedo hacer que funcionen títulos como &ldquo;Tomb Raider Anniversary&rdquo;, &ldquo;World of Warcraft&rdquo; o &ldquo;The Witcher&rdquo;, en algunos otros casos debemos decir que sí, que ejecutarse se ejecuta, pero aún queda para decir que es &ldquo;jugable&rdquo;. Por lo menos a ojos del equipo de desarrollo del videojuego.<br /><br />Tal es el caso del Principe de Persia 2008, calidad artística donde las haya, que puede instalarse en Linux (eso nos cuentan los chicos de <a href="http://www.playonlinux.com/es/news-535.html" target="_blank">PlayOnLinux</a>) aunque yo diría que lo que puede hacerse es &ldquo;ejecutarse&rdquo;: hay que bajar la resolución al mínimo, quitar las texturas HD&hellip; en fin, y cuando consigues que funcione, ve guardando cada poco, que puede írsete al cuerno y aparecer tu bonito escritorio (con compiz o sin él).<br /><br />Os pongo una muestra de cómo queda el juego según la plataforma:<br /><br />Win/XBox360<br /><br /><img alt="pop_win_cara" class="aligncenter size-full wp-image-95" src="http://davidpx.files.wordpress.com/2009/01/pop_win_cara.jpg" height="236" title="pop_win_cara" width="253" /><br /> <img alt="pop_win_paisaje" style="width:500px; height:auto;" src="http://davidpx.files.wordpress.com/2009/01/pop_win_paisaje.jpg"  title="pop_win_paisaje"  /><br /><br />Linux, sin texturas, a baja resolución, rezándole a algún beato:<br /><br /><img alt="pop_linux_cara" class="aligncenter size-medium wp-image-99" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_cara.jpg?w=300" height="94" title="pop_linux_cara" width="300" /> <img alt="pop_linux_paisaje" class="aligncenter size-medium wp-image-100" src="http://davidpx.files.wordpress.com/2009/01/pop_linux_paisaje.jpg?w=300" height="250" title="pop_linux_paisaje" width="300" /><br /><br />Bueno, os dejo que tengo un mago que se no sube de nivel solito. Que vuestros días sean largos, y escasos los contratiempos ;)</p>
 ]]></content>
   </entry>
   

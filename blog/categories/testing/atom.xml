@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Testing | /sys/admin]]></title>
   <link href="http://devopsysadmin.github.io/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://devopsysadmin.github.io/"/>
-  <updated>2015-10-14T08:41:05+02:00</updated>
+  <updated>2015-12-29T11:34:22+01:00</updated>
   <id>http://devopsysadmin.github.io/</id>
   <author>
     <name><![CDATA[David PG]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Vuelta a Debian]]></title>
     <link href="http://devopsysadmin.github.io/blog/2008/09/10/vuelta-debian/"/>
-    <updated>2008-09-10T09:48:00-07:00</updated>
+    <updated>2008-09-10T18:48:00+02:00</updated>
     <id>http://devopsysadmin.github.io/blog/2008/09/10/vuelta-debian</id>
     <content type="html"><![CDATA[<p>Tras todo este tiempo perteneciendo a la saga de seguidores de <a href="http://kubuntu-es.org" target="_blank">kubuntu</a>, vuelvo a mi sitio dentro de la comunidad <a href="http://debian.org" target="_blank">Debian</a>.<br/><br/>¿Por qué? Primero, porque Debian es una excelente solución para servidores y equipos que requieren estabilidad por encima de actualizaciones. Segundo, porque los paquetes &ldquo;testing&rdquo;, a pesar de su nombre, son bastante sólidos y se actualizan cada poco. Y tercero, porque creo que la hija Ubuntu tiene demasiados avalorios que a mí me resultan algo incómodos. No soy propenso al escritorio espartano (salvo en el ámbito laboral, en el que prefiero consola y herramientas gráficas básicas), y de hecho tengo agregado el repositorio de kde4 para debian Lenny, pero es que hay algo en esta distribución que me convence cada vez más.<br/><br/>En fin, ya os iré contando programas, consejos, trucos y métodos de afinamiento para esta distribución.</p>
 ]]></content>

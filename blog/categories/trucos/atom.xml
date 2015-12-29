@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Trucos | /sys/admin]]></title>
   <link href="http://devopsysadmin.github.io/blog/categories/trucos/atom.xml" rel="self"/>
   <link href="http://devopsysadmin.github.io/"/>
-  <updated>2015-10-14T08:41:05+02:00</updated>
+  <updated>2015-12-29T11:34:22+01:00</updated>
   <id>http://devopsysadmin.github.io/</id>
   <author>
     <name><![CDATA[David PG]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Sendlines, Un Expect Simplificado]]></title>
     <link href="http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado/"/>
-    <updated>2015-02-19T08:17:00-08:00</updated>
+    <updated>2015-02-19T17:17:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2015/02/19/sendlines-un-expect-simplificado</id>
     <content type="html"><![CDATA[<p>Para automatizar tareas siempre había hecho uso de <a href="http://www.tcl.tk/man/expect5.31/autoexpect.1.html">autoexpect</a>, ya que, una vez realizado (y guardado) todo la primera vez, sólo había que hacer un par de apaños al script resultante. Sin embargo, hay veces que no necesitamos algo tan sofisticado o no queremos instalar tcl/tsh en la máquina.</p>
 
@@ -96,7 +96,7 @@ donde:<br />
   <entry>
     <title type="html"><![CDATA[Hacer Un Pg_dump Aprovechando Los Cores De La Máquina]]></title>
     <link href="http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los/"/>
-    <updated>2015-02-17T07:06:00-08:00</updated>
+    <updated>2015-02-17T16:06:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2015/02/17/truco-hacer-un-pgdump-aprovechando-los</id>
     <content type="html"><![CDATA[<p>Desde la versión 9.3, postgreSQL permite hacer dumps de la base de datos en forma paralela, aprovechando así el número de cores de la máquina.</p>
 

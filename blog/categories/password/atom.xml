@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Password | /sys/admin]]></title>
   <link href="http://devopsysadmin.github.io/blog/categories/password/atom.xml" rel="self"/>
   <link href="http://devopsysadmin.github.io/"/>
-  <updated>2015-10-14T08:41:05+02:00</updated>
+  <updated>2015-12-29T11:34:22+01:00</updated>
   <id>http://devopsysadmin.github.io/</id>
   <author>
     <name><![CDATA[David PG]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Passwords Con Caracteres Aleatorios]]></title>
     <link href="http://devopsysadmin.github.io/blog/2015/02/23/passwords-con-caracteres-aleatorios/"/>
-    <updated>2015-02-23T07:01:00-08:00</updated>
+    <updated>2015-02-23T16:01:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2015/02/23/passwords-con-caracteres-aleatorios</id>
     <content type="html"><![CDATA[<p>En muchas ocasiones, cuando tenemos que crear un servicio que pide usuario/password, tendemos al uso de passwords simples o poco elaboradas. Tanto si es para un uso personal como si es para compartir información entre usuarios (este, quizás, más importante aún securizar), las password simples o basadas en diccionarios no son del todo una buena idea.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Edición | /sys/admin]]></title>
   <link href="http://devopsysadmin.github.io/blog/categories/edicion/atom.xml" rel="self"/>
   <link href="http://devopsysadmin.github.io/"/>
-  <updated>2015-10-14T08:41:05+02:00</updated>
+  <updated>2015-12-29T11:34:22+01:00</updated>
   <id>http://devopsysadmin.github.io/</id>
   <author>
     <name><![CDATA[David PG]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Avidemux "a-la-QT"]]></title>
     <link href="http://devopsysadmin.github.io/blog/2008/11/14/avidemux/"/>
-    <updated>2008-11-14T07:52:00-08:00</updated>
+    <updated>2008-11-14T16:52:00+01:00</updated>
     <id>http://devopsysadmin.github.io/blog/2008/11/14/avidemux</id>
     <content type="html"><![CDATA[<p>Avidemux es un editor de videos muy similar en características al VirtualDub de otras plataformas. Ya conocía de la existencia de elección entre librería GTK y QT fuera de Linux para este programa, pero gracias al blog <a href="http://ubuntulife.wordpress.com/2008/11/14/avidemux-qt-editor-de-videos/" target="_blank">Ubuntu Life</a> (tardais en ir a visitarlo), veo que también existe para la plataforma del pingüino.<br/><br/>Para tenerlo disponible en Debian (por problemas de licencia, supongo), es necesario tener disponible el repositorio debian-multimedia de Marillat, así que aseguraos de <a href="http://debian-multimedia.org/" target="_blank">visitar su web</a> para comprobar que teneis en vuestro sources.list el repositorio antes de intentar instalarlo:<br/><br/><code>apt-get install avidemux-qt</code></p>
 ]]></content>
