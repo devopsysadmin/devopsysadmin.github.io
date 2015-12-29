@@ -3,7 +3,10 @@ layout: post
 title: "From Debian to Arch: not as difficult, nor simple either"
 date: 2015-10-13 20:40:20 +0200
 comments: true
-categories: 
+categories:
+- linux
+- arch
+- manjaro
 ---
 
 Recently I've changed my laptop main distro from Debian to Manjaro (an Arch-based distribution). Does it mean that the Carmina Burana's "Oh Fortuna" plays while apt-get falls into the depths of Oblivion? Well, technically yes. I mean, I can listen "Oh Fortuna" or any other piece of music while any linux distribution is being installed. And trully, pacman is NOT apt tools (It doesn't mean better or worse, just means they are different). But in the meantime I get used to this new approach and enjoy the views of KDE Plasma 5, I needed some help to the transition.
