@@ -3,12 +3,20 @@ if [ `basename $PWD` = bin ]; then cd .. ; fi
 HERE=$PWD
 mkdir -p $HERE/octopress
 
-if [ ! -d $HERE/octopress/code ]; then
-	git clone https://github.com/imathis/octopress.git $HERE/octopress/code
+if [ -d $HERE/octopress/code ]; then
+	cd $HERE/octopress/code
+	GIT=$(git pull)
+	echo "$GIT"
+	UPDATED=$(echo $GIT | grep -ci already)
 else
-	cd $HERE/octopress/code && git pull
+	git clone https://github.com/imathis/octopress.git $HERE/octopress/code
+	UPDATED=0
 fi
 
+# Git says it's already up-to-date, so...
+if [ $UPDATED -eq 1 ]; then exit ; fi
+
+# Yay, New stuff!
 rsync -aS $HERE/octopress/code/ $HERE/octopress/updated/ \
 	--exclude=.git* \
 	--exclude=_config.yml \
