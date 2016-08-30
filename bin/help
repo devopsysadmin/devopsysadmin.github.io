@@ -2,7 +2,7 @@
 cat << .
 
 USAGE:
-    - create new post: rake new_post['post title']
-    - launch instance to supervise changes: rake watch
+    - create new post: bin/new PAGE|POST title
+    - see locally while writing changes: bin/serve
     - deploy contents: bin/deploy
 .
