@@ -1,0 +1,15 @@
+#!/bin/sh
+OPTION=$1
+TITLE="$2"
+Usage(){
+	echo "Usage: $(basename $0) POST|PAGE TITLE"
+}
+case $1 in
+	blog)
+		rake new_post["$TITLE"]
+		;;
+	*)
+		Usage
+		exit 1
+		;;
+esac

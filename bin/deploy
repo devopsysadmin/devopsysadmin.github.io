@@ -1,4 +1,6 @@
 #!/bin/sh
+CONTENTS='../contents'
+
 if [ `basename $PWD` = bin ]; then
     cd ..
 fi
@@ -9,9 +11,9 @@ git commit
 git push origin source
 
 bundle exec rake generate
-rsync -as --exclude=.git --delete-before public/ ../master/
+rsync -as --exclude=.git --delete-before public/ $CONTENTS/
 
-cd ../master/
+cd $CONTENTS
 git add -A .
 git commit -m "$DATE"
 git push origin master
